@@ -1,155 +1,275 @@
 <!DOCTYPE html>
-<!-- saved from url=(0060)file:///C:/Users/Admin/Downloads/aramco_numerical_111_1.html -->
-<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Numerical Reasoning — 111 Questions</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./Numerical Reasoning — 111 Questions_files/css2" rel="stylesheet">
+<title>Numerical Reasoning — Complete PDF Question Bank</title>
 <style>
-:root{--bg:#0f0f0f;--surface:#181818;--surface2:#222;--border:#2a2a2a;--border2:#333;--text:#f0ede8;--muted:#888;--green:#4caf7d;--green-bg:#0d2218;--green-border:#1e4d32;--red:#e05c5c;--red-bg:#220d0d;--red-border:#4d1e1e;--amber:#d4a843;--amber-bg:#201600;--accent:#c8b89a;}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'IBM Plex Sans Arabic',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-#home{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem}
-.home-inner{width:100%;max-width:580px}
-.logo{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem}
-.home-title{font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.15;margin-bottom:.5rem}
-.home-sub{font-size:14px;color:var(--muted);margin-bottom:2rem;line-height:1.6}
-.mode-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
-.mode-item{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s}
-.mode-item:hover{border-color:var(--border2);background:var(--surface)}
-.mode-item.active{border-color:var(--accent);background:var(--surface)}
-.mode-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);flex-shrink:0;transition:background .15s}
-.mode-item.active .mode-dot{background:var(--accent)}
-.mode-name{font-size:14px;font-weight:500}.mode-desc{font-size:12px;color:var(--muted);margin-top:1px}
-.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:5px;max-height:320px;overflow-y:auto;margin-bottom:1.5rem;padding:1px}
-.topic-grid::-webkit-scrollbar{width:4px}.topic-grid::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
-.t-btn{padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--muted);font-size:11px;cursor:pointer;text-align:left;font-family:inherit;transition:all .15s;line-height:1.4}
-.t-btn:hover{border-color:var(--border2);color:var(--text)}.t-btn.sel{border-color:var(--accent);color:var(--accent);background:rgba(200,184,154,.06)}
-.start-btn{width:100%;padding:14px;background:var(--accent);color:#0f0f0f;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:opacity .15s}
-.start-btn:hover{opacity:.88}
-#quiz{display:none;height:100vh;overflow:hidden}
-.quiz-layout{display:grid;grid-template-columns:1fr 420px;height:100vh}
-.passage-panel{background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;display:flex;flex-direction:column}
-.passage-panel::-webkit-scrollbar{width:4px}.passage-panel::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
-.passage-header{padding:18px 22px 12px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--surface);z-index:1}
-.passage-num{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
-.passage-title{font-size:14px;font-weight:600;color:var(--accent)}
-.passage-body{padding:18px 22px;font-size:12.5px;line-height:1.8;color:#c8c4be;flex:1}
-.question-panel{overflow-y:auto;display:flex;flex-direction:column;padding:24px 28px}
-.question-panel::-webkit-scrollbar{width:4px}.question-panel::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
-.q-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.q-progress-wrap{flex:1;height:3px;background:var(--border);border-radius:2px;margin-left:16px}
-.q-progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .4s}
-.q-counter{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap}
-.q-score-row{display:flex;gap:16px;margin-bottom:16px}
-.q-score-item{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
-.q-score-item span{font-weight:600;font-size:14px}.score-g{color:var(--green)}.score-r{color:var(--red)}
-.q-topic-tag{display:inline-block;font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border2);border-radius:4px;padding:3px 8px;margin-bottom:12px}
-.q-text{font-size:14px;font-weight:500;line-height:1.65;color:var(--text);margin-bottom:20px}
-.ans-options{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
-.ans-btn{padding:11px 16px;border:1px solid var(--border2);border-radius:10px;background:transparent;color:#bbb;font-size:13px;cursor:pointer;font-family:inherit;text-align:left;transition:all .15s;font-weight:500}
-.ans-btn:hover:not([disabled]){border-color:#555;color:var(--text);background:var(--surface2)}
-.ans-btn[disabled]{cursor:default}
-.ans-btn.correct{background:var(--green-bg);border-color:var(--green-border);color:var(--green)}
-.ans-btn.wrong{background:var(--red-bg);border-color:var(--red-border);color:var(--red)}
-.ans-btn.reveal{background:var(--amber-bg);border-color:#4d3a00;color:var(--amber)}
-.feedback-box{padding:11px 14px;border-radius:8px;font-size:13px;margin-bottom:14px;line-height:1.6}
-.feedback-solution{font-size:11px;color:var(--muted);margin-top:5px;font-family:'IBM Plex Mono',monospace}
-.fb-correct{background:var(--green-bg);border:1px solid var(--green-border);color:var(--green)}
-.fb-wrong{background:var(--red-bg);border:1px solid var(--red-border);color:var(--red)}
-.next-btn{width:100%;padding:12px;background:var(--accent);color:#0f0f0f;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:opacity .15s;margin-top:auto}
-.next-btn:hover{opacity:.88}
-.home-btn{background:transparent;border:1px solid var(--border2);color:var(--muted);border-radius:10px;padding:9px 16px;font-size:13px;cursor:pointer;font-family:inherit;margin-bottom:14px;display:flex;align-items:center;gap:6px;transition:color .15s,border-color .15s}
-.home-btn:hover{color:var(--text);border-color:#555}
-#result{display:none;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
-.result-inner{width:100%;max-width:480px}
-.result-pct{font-size:72px;font-weight:600;color:var(--accent);line-height:1;margin-bottom:8px}
-.result-label{font-size:14px;color:var(--muted);margin-bottom:2rem}
-.result-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
-.r-stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
-.r-stat-n{font-size:28px;font-weight:600;margin-bottom:2px}.r-stat-l{font-size:12px;color:var(--muted)}
-.result-msg{font-size:15px;color:var(--text);margin-bottom:2rem;line-height:1.6;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px}
+body{font-family:Verdana,Tahoma,Arial,sans-serif;background:#fff;color:#333;min-height:100vh;font-size:13px}
+
+/* ───────── HOME ───────── */
+#home{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem;background:#fff}
+.home-card{background:#fff;border:1px solid #c8c8c8;border-radius:4px;padding:2.2rem 2rem;width:100%;max-width:540px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+.home-kicker{font-size:11px;color:#999;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.2rem}
+.home-title{font-size:24px;font-weight:bold;line-height:1.25;margin-bottom:.4rem;color:#222}
+.home-title .pink{color:#CC0066}
+.home-sub{font-size:12.5px;color:#666;margin-bottom:1.6rem;line-height:1.6}
+.mode-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1.4rem}
+.mode-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid #ccc;border-radius:4px;cursor:pointer;transition:all .15s;background:#fafafa}
+.mode-item:hover{border-color:#999;background:#f0f0f0}
+.mode-item.active{border-color:#CC0066;background:#fdf2f8}
+.pdf-radio{width:34px;height:23px;border-radius:4px;background:linear-gradient(#e2e2e2,#b9b9b9);border:1px solid #909090;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:inset 0 1px 0 #f5f5f5}
+.pdf-radio .oval{width:13px;height:10px;border-radius:50%;background:#fff;border:1px solid #888;box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.mode-item.active .pdf-radio .oval{background:radial-gradient(circle at 50% 50%, #2a2a2a 0 42%, #fff 50%)}
+.mode-name{font-size:13px;font-weight:bold;color:#333}.mode-desc{font-size:11px;color:#888;margin-top:1px}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:5px;max-height:280px;overflow-y:auto;margin-bottom:1.4rem;padding:1px}
+.topic-grid::-webkit-scrollbar{width:5px}.topic-grid::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
+.t-btn{padding:7px 10px;border:1px solid #ccc;border-radius:4px;background:#fafafa;color:#555;font-size:11px;cursor:pointer;text-align:left;font-family:inherit;transition:all .15s;line-height:1.4}
+.t-btn:hover{border-color:#CC0066;color:#CC0066}.t-btn.sel{border-color:#CC0066;color:#CC0066;background:#fdf2f8}
+.start-btn{width:100%;padding:12px;background:#CC0066;color:#fff;border:none;border-radius:4px;font-size:14px;font-weight:bold;cursor:pointer;font-family:inherit;transition:background .15s}
+.start-btn:hover{background:#a80354}
+
+/* ───────── QUIZ : PDF design ───────── */
+#quiz{display:none;min-height:100vh;background:#fff;padding:14px 16px 30px}
+.quiz-frame{max-width:1240px;margin:0 auto;border:1px solid #c4c4c4;border-radius:3px;background:#fff;padding:22px 26px 30px;position:relative;min-height:560px}
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;max-width:1240px;margin-left:auto;margin-right:auto;padding:0 2px}
+.nav-left{display:flex;gap:8px}
+.nav-btn{background:linear-gradient(#f4f4f4,#dcdcdc);border:1px solid #aaa;border-radius:3px;padding:6px 14px;font-size:12px;color:#444;cursor:pointer;font-family:inherit;transition:all .12s}
+.nav-btn:hover{background:linear-gradient(#fff,#e8e8e8);border-color:#888}
+.nav-btn:disabled{opacity:.4;cursor:default}
+.nav-score{font-size:12px;color:#777}
+.nav-score b{color:#CC0066}
+
+.quiz-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.chart-col{min-width:0}
+.chart-title{font-size:12.5px;font-weight:bold;color:#111;margin-bottom:8px;line-height:1.35}
+.chart-sub{font-weight:normal;font-size:11px;color:#444}
+.q-col{min-width:0;padding-top:2px}
+.q-header{font-size:15px;color:#555;margin-bottom:8px;font-family:Verdana,Tahoma,sans-serif}
+.q-header .qnum{color:#CC0066}
+.q-text{font-size:12.5px;color:#555;line-height:1.55;margin-bottom:26px}
+.opts{display:flex;flex-direction:column;gap:13px;max-width:340px}
+.opt-row{display:flex;align-items:center;gap:14px;cursor:pointer;padding:2px 4px;border-radius:3px;position:relative}
+.opt-row:hover .pdf-radio{background:linear-gradient(#ececec,#c4c4c4)}
+.opt-row.locked{cursor:default}
+.opt-label{font-size:12.5px;color:#555}
+.opt-row.correct-box{outline:2.5px solid #e02020;outline-offset:3px}
+.opt-row.chosen-correct .opt-label{color:#1a7a3f;font-weight:bold}
+.opt-row.chosen-wrong .opt-label{color:#c0392b;text-decoration:line-through}
+
+.solution-wrap{margin-top:26px;display:none}
+.sol-line{display:inline-block;background:#FFFF00;color:#111;font-size:12.5px;line-height:1.7;padding:2px 8px;margin-bottom:4px;font-weight:500}
+.fb-line{font-size:12.5px;margin-bottom:8px;font-weight:bold}
+.fb-line.ok{color:#1a7a3f}.fb-line.no{color:#c0392b}
+
+/* PDF-style tables */
+.pdftable{border-collapse:collapse;width:100%;max-width:480px;font-size:11px;margin-bottom:6px}
+.pdftable .ttitle{background:#6666CC;color:#fff;font-weight:bold;font-size:11.5px;padding:6px 8px;border:1px solid #444;text-align:center}
+.pdftable .thead{background:#000;color:#fff;font-weight:bold;padding:5px 7px;border:1px solid #444;text-align:center;font-size:10.5px}
+.pdftable .tblank{background:#000;border:1px solid #444}
+.pdftable .tlabel{background:#993366;color:#fff;font-weight:bold;padding:5px 8px;border:1px solid #444;font-size:10.5px}
+.pdftable .tcorner{background:#993366;color:#fff;font-weight:bold;padding:5px 7px;border:1px solid #444;font-size:10px;text-align:left}
+.pdftable .tval{background:#fff;color:#222;padding:5px 8px;border:1px solid #888;text-align:center}
+.tnote{font-size:10px;color:#555;margin-top:2px;font-style:italic}
+
+/* ───────── RESULT ───────── */
+#result{display:none;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;padding:2rem;background:#fff}
+.result-card{background:#fff;border:1px solid #c8c8c8;border-radius:4px;padding:2.4rem 2rem;width:100%;max-width:460px;box-shadow:0 1px 8px rgba(0,0,0,.08);text-align:center}
+.result-pct{font-size:60px;font-weight:bold;color:#CC0066;line-height:1;margin-bottom:6px}
+.result-label{font-size:12px;color:#888;margin-bottom:1.6rem}
+.result-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:1.6rem}
+.r-stat{background:#fafafa;border:1px solid #ddd;border-radius:4px;padding:12px;text-align:center}
+.r-stat-n{font-size:22px;font-weight:bold;margin-bottom:2px}.r-stat-l{font-size:10.5px;color:#888}
+.result-msg{font-size:13px;color:#444;margin-bottom:1.6rem;line-height:1.6;padding:13px;background:#fafafa;border:1px solid #ddd;border-radius:4px;text-align:right;direction:rtl}
 .result-btns{display:flex;gap:10px}
-.result-btns button{flex:1;padding:13px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
-.btn-restart{background:var(--accent);color:#0f0f0f;border:none}.btn-home{background:transparent;color:var(--text);border:1px solid var(--border2)}
-.btn-restart:hover{opacity:.88}.btn-home:hover{border-color:#555}
-.ct{width:100%;border-collapse:collapse;font-size:11.5px;margin:10px 0}
-.ct th{background:#1e1e1e;color:var(--accent);padding:7px 9px;text-align:left;border:1px solid var(--border2);font-weight:500;font-size:10.5px}
-.ct td{padding:7px 9px;border:1px solid var(--border);color:#c8c4be;font-size:11.5px}
-.ct tr:nth-child(even) td{background:#161616}
-.cl{font-size:10px;color:var(--muted);margin-bottom:3px;font-family:'IBM Plex Mono',monospace;letter-spacing:.05em}
-.ctitle{font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px}
-.cnote{font-size:10.5px;color:var(--muted);margin-top:6px;font-style:italic}
-.pi{display:flex;align-items:center;gap:6px;font-size:11.5px;color:#c8c4be;background:var(--surface2);padding:4px 9px;border-radius:6px;border:1px solid var(--border);margin-bottom:4px}
-.pd{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-@media(max-width:700px){.quiz-layout{grid-template-columns:1fr;grid-template-rows:auto 1fr;height:auto;min-height:100vh}.passage-panel{max-height:250px;border-right:none;border-bottom:1px solid var(--border);order:-1}#quiz{height:auto;overflow:visible}.question-panel{padding:18px 16px}}
+.result-btns button{flex:1;padding:11px;border-radius:4px;font-size:13px;font-weight:bold;cursor:pointer;font-family:inherit}
+.btn-restart{background:#CC0066;color:#fff;border:none}.btn-home{background:#fff;color:#444;border:1px solid #bbb}
+.btn-restart:hover{background:#a80354}.btn-home:hover{border-color:#888}
+
+.credit{text-align:center;font-size:12px;color:#888;margin-top:14px;direction:rtl;font-family:Tahoma,Arial,sans-serif}
+.credit b{color:#CC0066;font-family:Verdana,Arial,sans-serif}
+.credit-fixed{text-align:center;font-size:11.5px;color:#999;padding:10px 0 4px;direction:rtl;font-family:Tahoma,Arial,sans-serif}
+.credit-fixed b{color:#CC0066;font-family:Verdana,Arial,sans-serif}
+
+@media(max-width:860px){
+  .quiz-grid{grid-template-columns:1fr;gap:22px}
+  .quiz-frame{padding:16px 14px 24px}
+}
 </style>
 </head>
 <body>
-<div id="home" style="display: flex;">
-<div class="home-inner">
-  <div class="logo">Numerical Reasoning · 19 Chart Sets · 111 Questions</div>
-  <h1 class="home-title">Numerical Reasoning Quiz</h1>
-  <p class="home-sub">Study each chart or table carefully, then answer the question. Solutions shown after each answer.</p>
+
+<!-- HOME -->
+<div id="home">
+<div class="home-card">
+  <div class="home-kicker">Numerical Reasoning &middot; 19 Chart Sets &middot; 108 Questions (matching the PDF)</div>
+  <h1 class="home-title">Practise Numerical<br>Reasoning <span class="pink">Test</span></h1>
+  <p class="home-sub">Study each chart or table carefully, then answer the question. The correct answer and solution will be shown after each response.</p>
   <div class="mode-list">
-    <div class="mode-item active" onclick="setMode(&#39;all&#39;,this)"><div class="mode-dot"></div><div><div class="mode-name">All Questions</div><div class="mode-desc">19 chart sets · 111 questions</div></div></div>
-    <div class="mode-item" onclick="setMode(&#39;topic&#39;,this)"><div class="mode-dot"></div><div><div class="mode-name">Specific Chart Set</div><div class="mode-desc">Choose from the list below</div></div></div>
-    <div class="mode-item" onclick="setMode(&#39;random&#39;,this)"><div class="mode-dot"></div><div><div class="mode-name">20 Random Questions</div><div class="mode-desc">Quick mixed practice</div></div></div>
+    <div class="mode-item active" onclick="setMode('all',this)"><div class="pdf-radio"><div class="oval"></div></div><div><div class="mode-name">All Questions</div><div class="mode-desc">19 chart sets &middot; 108 questions</div></div></div>
+    <div class="mode-item" onclick="setMode('topic',this)"><div class="pdf-radio"><div class="oval"></div></div><div><div class="mode-name">Specific Chart Set</div><div class="mode-desc">Choose from the list below</div></div></div>
+    <div class="mode-item" onclick="setMode('random',this)"><div class="pdf-radio"><div class="oval"></div></div><div><div class="mode-name">20 Random Questions</div><div class="mode-desc">Quick mixed practice</div></div></div>
   </div>
-  <div id="topic-picker" style="display:none;margin-bottom:1.5rem"><div class="topic-grid" id="topic-grid"><button class="t-btn" data-cid="1">Set 1 · Somerset Kitchens</button><button class="t-btn" data-cid="2">Set 2 · Promotional Activities (£80,000)</button><button class="t-btn" data-cid="3">Set 3 · Jenner Pharmaceuticals</button><button class="t-btn" data-cid="4">Set 4 · Demographic &amp; Infrastructure</button><button class="t-btn" data-cid="5">Set 5 · Nixon Global</button><button class="t-btn" data-cid="6">Set 6 · Employment by Market Sector</button><button class="t-btn" data-cid="7">Set 7 · Consumer Goods Exports (HKD)</button><button class="t-btn" data-cid="8">Set 8 · Elite Conservatories</button><button class="t-btn" data-cid="9">Set 9 · Gallini Shoes</button><button class="t-btn" data-cid="10">Set 10 · Population Breakdown by Age</button><button class="t-btn" data-cid="11">Set 11 · Galmar Desert Oil</button><button class="t-btn" data-cid="12">Set 12 · Burlington — Sales Rep Mileage</button><button class="t-btn" data-cid="13">Set 13 · Jarrow Group Company Figures</button><button class="t-btn" data-cid="14">Set 14 · International Product Sales</button><button class="t-btn" data-cid="15">Set 15 · Confederated Stores Group</button><button class="t-btn" data-cid="16">Set 16 · Tresco Group Bars</button><button class="t-btn" data-cid="17">Set 17 · Starlight Cosmetics</button><button class="t-btn" data-cid="18">Set 18 · Customer Satisfaction Survey</button><button class="t-btn" data-cid="19">Set 19 · Company Financial Year Figures</button></div></div>
-  <button class="start-btn" onclick="startQuiz()">Start Quiz →</button>
+  <div id="topic-picker" style="display:none;margin-bottom:1.4rem"><div class="topic-grid" id="topic-grid"></div></div>
+  <button class="start-btn" onclick="startQuiz()">Start Test</button>
+  <div class="credit">لا تنسوني من دعائكم 🤲 — <b>KRM</b></div>
 </div>
 </div>
-<div id="quiz" style="display: none;">
-<div class="quiz-layout">
-  <div class="question-panel">
-    <button class="home-btn" onclick="goHome()">← Back</button>
-    <div class="q-topbar"><div class="q-counter" id="q-counter">7/122</div><div class="q-progress-wrap"><div class="q-progress-fill" id="q-prog" style="width: 5%;"></div></div></div>
-    <div class="q-score-row"><div class="q-score-item"><span class="score-g" id="sc-c">1</span> Correct</div><div class="q-score-item"><span class="score-r" id="sc-w">5</span> Wrong</div></div>
-    <div class="q-topic-tag" id="q-topic-tag">Jarrow Group Company Figures</div>
-    <div class="q-text" id="q-text">If someone sold 3,500 shares in HLB PLC, approximately how many shares of Felton Financial could they buy?</div>
-    <div class="ans-options" id="q-btns"><button class="ans-btn">659</button><button class="ans-btn">1,373</button><button class="ans-btn">2,600</button><button class="ans-btn">6,591</button><button class="ans-btn">101,350</button></div>
-    <div id="q-feedback" style="display: none;" class="feedback-box fb-correct">✓ Correct!<div class="feedback-solution">💡 A002: LY=17+410=427, TY=31+354=385. Decreased!</div></div>
-    <button class="next-btn" id="next-btn" style="display: none;" onclick="nextQ()">Next →</button>
+
+<!-- QUIZ -->
+<div id="quiz">
+  <div class="nav-row">
+    <div class="nav-left">
+      <button class="nav-btn" onclick="goHome()">&#8962; Home</button>
+      <button class="nav-btn" id="back-btn" onclick="prevQuestion()">&larr; Back</button>
+    </div>
+    <div class="nav-score" id="nav-score">Score: <b>0</b> / 0</div>
+    <div class="nav-left">
+      <button class="nav-btn" id="next-btn" onclick="nextQuestion()">Next &rarr;</button>
+    </div>
   </div>
-  <div class="passage-panel">
-    <div class="passage-header"><div class="passage-num" id="p-num">Set 13</div><div class="passage-title" id="p-title">Jarrow Group Company Figures</div></div>
-    <div class="passage-body" id="p-body"><div class="ctitle">Jarrow Group Company Figures — End 2002</div><table class="ct"><tbody><tr><th></th><th>Gilcrest</th><th>J Barnard</th><th>Felton Fin.</th><th>HLB Plc</th><th>Stonemore</th></tr><tr><td>Capital (£m)</td><td>42.3</td><td>640.1</td><td>25.2</td><td>27.1</td><td>130.1</td></tr><tr><td>Turnover (£m)</td><td>11.4</td><td>160.7</td><td>2.3</td><td>7.3</td><td>60.0</td></tr><tr><td>Profit (£m)</td><td>9.2</td><td>-33.9</td><td>-1.9</td><td>3.0</td><td>9.3</td></tr><tr><td>Debt (£m)</td><td>9.7</td><td>341.0</td><td>1.7</td><td>8.2</td><td>30.8</td></tr><tr><td>Share Price (p)</td><td>108.0</td><td>172.1</td><td>60.0</td><td>11.3</td><td>48.7</td></tr><tr><td>No. of Shares (m)</td><td>0.5</td><td>2.7</td><td>0.9</td><td>3.2</td><td>7.2</td></tr></tbody></table></div>
+  <div class="quiz-frame">
+    <div class="quiz-grid">
+      <div class="chart-col" id="chart-col"></div>
+      <div class="q-col">
+        <div class="q-header">Practise Numerical Reasoning test: <span class="qnum" id="q-num">Question 1 of 6</span></div>
+        <div class="q-text" id="q-text"></div>
+        <div class="opts" id="opts"></div>
+        <div class="solution-wrap" id="solution-wrap">
+          <div class="fb-line" id="fb-line"></div>
+          <div id="sol-lines"></div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="credit-fixed">لا تنسوني من دعائكم 🤲 — <b>KRM</b></div>
 </div>
-</div>
-<div id="result" style="display:none;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem">
-<div class="result-inner">
-  <div class="result-pct" id="r-pct">0%</div><div class="result-label" id="r-label"></div>
+
+<!-- RESULT -->
+<div id="result">
+<div class="result-card">
+  <div class="result-pct" id="result-pct">0%</div>
+  <div class="result-label">Final Score</div>
   <div class="result-stats">
-    <div class="r-stat"><div class="r-stat-n" id="r-c" style="color:var(--green)">0</div><div class="r-stat-l">Correct</div></div>
-    <div class="r-stat"><div class="r-stat-n" id="r-w" style="color:var(--red)">0</div><div class="r-stat-l">Wrong</div></div>
+    <div class="r-stat"><div class="r-stat-n" style="color:#1a7a3f" id="r-correct">0</div><div class="r-stat-l">Correct</div></div>
+    <div class="r-stat"><div class="r-stat-n" style="color:#c0392b" id="r-wrong">0</div><div class="r-stat-l">Wrong</div></div>
+    <div class="r-stat"><div class="r-stat-n" style="color:#CC0066" id="r-total">0</div><div class="r-stat-l">Total</div></div>
   </div>
-  <div class="result-msg" id="r-msg"></div>
-  <div class="result-btns"><button class="btn-restart" onclick="restartSame()">Retry</button><button class="btn-home" onclick="goHome()">Home</button></div>
+  <div class="result-msg" id="result-msg"></div>
+  <div class="result-btns">
+    <button class="btn-restart" onclick="restartQuiz()">Restart</button>
+    <button class="btn-home" onclick="goHome()">Home</button>
+  </div>
+  <div class="credit">لا تنسوني من دعائكم 🤲 — <b>KRM</b></div>
 </div>
 </div>
+
 <script>
-const SK=`<div class="ctitle">Somerset Kitchens — Sources of Product Enquiries</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px"><div><div class="cl">LAST YEAR</div><div class="pi"><div class="pd" style="background:#7b4fa6"></div>Brochures 36%</div><div class="pi"><div class="pd" style="background:#e8c55a"></div>Newspapers 25%</div><div class="pi"><div class="pd" style="background:#1a5fb4"></div>Internet 15%</div><div class="pi"><div class="pd" style="background:#e07b2a"></div>Recommendations 15.5%</div><div class="pi"><div class="pd" style="background:#4e9de0"></div>Telesales 8.5%</div></div><div><div class="cl">THIS YEAR</div><div class="pi"><div class="pd" style="background:#7b4fa6"></div>Brochures 40%</div><div class="pi"><div class="pd" style="background:#e8c55a"></div>Newspapers 25%</div><div class="pi"><div class="pd" style="background:#1a5fb4"></div>Internet 10%</div><div class="pi"><div class="pd" style="background:#e07b2a"></div>Recommendations 15%</div><div class="pi"><div class="pd" style="background:#4e9de0"></div>Telesales 10%</div></div></div><div class="cnote">Internet this year = 12,000 enquiries (given)</div>`;
-const PA=`<div class="ctitle">Cost of Promotional Activities — Last Financial Year</div><div style="font-size:13px;color:var(--accent);margin-bottom:10px;font-weight:600">Total: £80,000</div><table class="ct"><tr><th>Item</th><th>%</th><th>£ Value</th></tr><tr><td>Stationery</td><td>9%</td><td>7,200</td></tr><tr><td>Leaflets</td><td>25%</td><td>20,000</td></tr><tr><td>Brochures</td><td>33%</td><td>26,400</td></tr><tr><td>Advertising</td><td>18%</td><td>14,400</td></tr><tr><td>Flyers</td><td>15%</td><td>12,000</td></tr><tr><td><b>Total</b></td><td>100%</td><td><b>80,000</b></td></tr></table>`;
-const JP=`<div class="ctitle">Jenner Pharmaceuticals — Revenue Breakdown (%)</div><table class="ct"><tr><th>Category</th><th>2002</th><th>2003</th></tr><tr><td>Advertising</td><td>25%</td><td>25%</td></tr><tr><td>Salaries</td><td>34%</td><td>40%</td></tr><tr><td>Training</td><td>12.5%</td><td>10%</td></tr><tr><td>Overheads</td><td>8.5%</td><td>10%</td></tr><tr><td>Profit</td><td>20%</td><td>15%</td></tr></table>`;
-const DI=`<div class="ctitle">Demographic and Infrastructure Information</div><table class="ct"><tr><th></th><th>Argentina</th><th>India</th><th>UK</th></tr><tr><td>GNP (USA $m)</td><td>260,000</td><td>477,000</td><td>1,480,000</td></tr><tr><td>Economically Active %</td><td>39.67</td><td>38.82</td><td>49.68</td></tr><tr><td>Trucks & Buses (m)</td><td>0.80</td><td>2.10</td><td>4.20</td></tr><tr><td>Cars (m)</td><td>5.60</td><td>10.50</td><td>21.30</td></tr><tr><td>Telephones (m)</td><td>10.50</td><td>30.60</td><td>78.40</td></tr><tr><td>Population (m)</td><td>37.80</td><td>1,046</td><td>59.80</td></tr><tr><td>Urban:Rural %</td><td>88:12</td><td>28:72</td><td>90:10</td></tr></table><div class="cnote">m = million</div>`;
-const NG=`<div class="ctitle">Nixon Global — Revenue & Operating Profit ($1,000m)</div><table class="ct"><tr><th>Region</th><th>Rev 2000</th><th>Op.P 2000</th><th>Rev 2003</th><th>Op.P 2003</th></tr><tr><td>US (32→50)</td><td>2.3</td><td>0.8</td><td>3.6</td><td>1.5</td></tr><tr><td>Europe (62→48)</td><td>4.5</td><td>0.9</td><td>6.0</td><td>2.0</td></tr><tr><td>Asia (50→40)</td><td>6.7</td><td>-0.1</td><td>8.0</td><td>1.0</td></tr></table>`;
-const EM=`<div class="ctitle">Employment Breakdown — Market Sector by Gender</div><div class="cnote" style="margin-bottom:8px">Men total = 14,000,000 · Women total = 6,000,000</div><table class="ct"><tr><th>Sector</th><th>Men %</th><th>Women %</th></tr><tr><td>Production</td><td>23%</td><td>10%</td></tr><tr><td>Finance</td><td>13%</td><td>35%</td></tr><tr><td>Distribution</td><td>18%</td><td>25%</td></tr><tr><td>Construction</td><td>12%</td><td>1%</td></tr><tr><td>Admin</td><td>12%</td><td>15%</td></tr><tr><td>Other</td><td>22%</td><td>14%</td></tr></table>`;
-const CG=`<div class="ctitle">Projected Consumer Goods Exports (HKD millions)</div><table class="ct"><tr><th>Year</th><th>Singapore</th><th>Hong Kong</th><th>Combined</th></tr><tr><td>Y1</td><td>60</td><td>300</td><td>360</td></tr><tr><td>Y2</td><td>70</td><td>330</td><td>400</td></tr><tr><td>Y3</td><td>80</td><td>350</td><td>430</td></tr><tr><td>Y4</td><td>80</td><td>420</td><td>500</td></tr><tr><td>Y5</td><td>90</td><td>450</td><td>540</td></tr></table><div class="cnote">$4.50 HKD = $1 SGD · $1.60 SGD = $1 USD</div>`;
-const EC=`<div class="ctitle">Elite Conservatories — Number Sold (1997–2002)</div><table class="ct"><tr><th>Year</th><th>Pine</th><th>Hardwood</th><th>UPVC</th><th>Total</th></tr><tr><td>1997</td><td>700</td><td>200</td><td>400</td><td>1,300</td></tr><tr><td>1998</td><td>800</td><td>400</td><td>200</td><td>1,400</td></tr><tr><td>1999</td><td>700</td><td>500</td><td>300</td><td>1,500</td></tr><tr><td>2000</td><td>600</td><td>600</td><td>500</td><td>1,700</td></tr><tr><td>2001</td><td>500</td><td>700</td><td>400</td><td>1,600</td></tr><tr><td>2002</td><td>400</td><td>500</td><td>300</td><td>1,200</td></tr></table>`;
-const GS=`<div class="ctitle">Gallini Shoes — International Sales</div><table class="ct"><tr><th>Region</th><th>Ladies % (€4,000m)</th><th>Men % (€2,000m)</th></tr><tr><td>Italy</td><td>35%</td><td>20%</td></tr><tr><td>France</td><td>21%</td><td>21%</td></tr><tr><td>UK</td><td>15%</td><td>37%</td></tr><tr><td>Rest of Europe</td><td>19%</td><td>17%</td></tr><tr><td>Rest of World</td><td>10%</td><td>5%</td></tr></table>`;
-const PB=`<div class="ctitle">Population (millions) — Breakdown by Age</div><table class="ct"><tr><th>Year</th><th>Under 16</th><th>16-39</th><th>40-64</th><th>65-79</th><th>80+</th><th>Total</th></tr><tr><td>1970</td><td>13.2</td><td>16.5</td><td>16.9</td><td>5.2</td><td>1.0</td><td>52.8</td></tr><tr><td>1980</td><td>13.8</td><td>17.5</td><td>17.3</td><td>6.1</td><td>1.3</td><td>56.0</td></tr><tr><td>1990</td><td>12.5</td><td>19.7</td><td>15.7</td><td>6.9</td><td>1.6</td><td>56.4</td></tr><tr><td>2000</td><td>11.7</td><td>20.3</td><td>16.5</td><td>6.9</td><td>2.2</td><td>57.6</td></tr></table>`;
-const GO=`<div class="ctitle">Galmar Desert Oil — Comparative Costs 2002</div><table class="ct"><tr><th></th><th>Sapphire</th><th>Emerald</th><th>Topaz</th><th>Diamond</th><th>Amethyst</th></tr><tr><td>Daily Output (1,000s bbl)</td><td>150</td><td>224</td><td>418</td><td>510</td><td>240</td></tr><tr><td>Output % of prev year</td><td>90%</td><td>80%</td><td>110%</td><td>150%</td><td>75%</td></tr><tr><td>Operating Costs ($m)</td><td>210</td><td>240</td><td>375</td><td>300</td><td>120</td></tr><tr><td>Exploration & Capital ($m)</td><td>9,000</td><td>6,000</td><td>12,000</td><td>8,000</td><td>12,000</td></tr></table><div class="cnote">m = million</div>`;
-const BU=`<div class="ctitle">Burlington Security Systems — Sales Rep Mileage Chart</div><table class="ct"><tr><th>Week</th><th>Grant (miles)</th><th>Hooper (miles)</th><th>Combined</th></tr><tr><td>1</td><td>490</td><td>630</td><td>1,120</td></tr><tr><td>2</td><td>502</td><td>322</td><td>824</td></tr><tr><td>3</td><td>307</td><td>496</td><td>803</td></tr><tr><td>4</td><td>752</td><td>525</td><td>1,277</td></tr><tr><td>5</td><td>487</td><td>821</td><td>1,308</td></tr></table>`;
-const JR=`<div class="ctitle">Jarrow Group Company Figures — End 2002</div><table class="ct"><tr><th></th><th>Gilcrest</th><th>J Barnard</th><th>Felton Fin.</th><th>HLB Plc</th><th>Stonemore</th></tr><tr><td>Capital (£m)</td><td>42.3</td><td>640.1</td><td>25.2</td><td>27.1</td><td>130.1</td></tr><tr><td>Turnover (£m)</td><td>11.4</td><td>160.7</td><td>2.3</td><td>7.3</td><td>60.0</td></tr><tr><td>Profit (£m)</td><td>9.2</td><td>-33.9</td><td>-1.9</td><td>3.0</td><td>9.3</td></tr><tr><td>Debt (£m)</td><td>9.7</td><td>341.0</td><td>1.7</td><td>8.2</td><td>30.8</td></tr><tr><td>Share Price (p)</td><td>108.0</td><td>172.1</td><td>60.0</td><td>11.3</td><td>48.7</td></tr><tr><td>No. of Shares (m)</td><td>0.5</td><td>2.7</td><td>0.9</td><td>3.2</td><td>7.2</td></tr></table>`;
-const IP=`<div class="ctitle">International Product Sales — Revenue (£1,000s)</div><table class="ct"><tr><th>Code</th><th>Europe LY</th><th>Europe TY</th><th>N.America LY</th><th>N.America TY</th></tr><tr><td>A002</td><td>17</td><td>31</td><td>410</td><td>354</td></tr><tr><td>B008</td><td>26</td><td>56</td><td>18</td><td>59</td></tr><tr><td>C015</td><td>21</td><td>69</td><td>27</td><td>71</td></tr><tr><td>D024</td><td>37</td><td>67</td><td>13</td><td>50</td></tr><tr><td>E001</td><td>31</td><td>32</td><td>19</td><td>37</td></tr><tr><td>F073</td><td>36</td><td>16</td><td>29</td><td>19</td></tr></table>`;
-const CS=`<div class="ctitle">Confederated Stores Group (CSG) — Daily Sales</div><table class="ct"><tr><th>Daily Sales</th><th>Urban</th><th>Rural</th></tr><tr><td>Under £5,000</td><td>256</td><td>58</td></tr><tr><td>£5,000–£9,999</td><td>1,532</td><td>378</td></tr><tr><td>£10,000–£14,999</td><td>4,260</td><td>1,252</td></tr><tr><td>£15,000–£19,999</td><td>4,874</td><td>1,346</td></tr><tr><td>£20,000–£24,999</td><td>4,510</td><td>1,522</td></tr><tr><td>£25,000–£29,999</td><td>1,544</td><td>572</td></tr><tr><td>£30,000–£50,000</td><td>340</td><td>148</td></tr><tr><td>Over £50,000</td><td>90</td><td>14</td></tr><tr><td><b>Total</b></td><td><b>17,406</b></td><td><b>5,290</b></td></tr></table>`;
-const TR=`<div class="ctitle">Tresco Group — Weekly Sales Distribution</div><table class="ct"><tr><th>Weekly Sales</th><th>Bars w/o Restaurant</th><th>Bars with Restaurant</th></tr><tr><td>Under £30,000</td><td>18</td><td>60</td></tr><tr><td>£30,000–£39,999</td><td>124</td><td>548</td></tr><tr><td>£40,000–£49,999</td><td>315</td><td>961</td></tr><tr><td>£50,000–£59,999</td><td>412</td><td>1,650</td></tr><tr><td>£60,000–£69,999</td><td>562</td><td>2,356</td></tr><tr><td>£70,000–£79,999</td><td>470</td><td>3,150</td></tr><tr><td>£80,000–£89,999</td><td>220</td><td>2,754</td></tr><tr><td>£90,000–£100,000</td><td>75</td><td>1,679</td></tr><tr><td>Over £100,000</td><td>4</td><td>42</td></tr></table>`;
-const SC=`<div class="ctitle">Starlight Cosmetics — Financial Data</div><table class="ct"><tr><th></th><th>1998</th><th>1999</th><th>2000</th><th>2001</th><th>2002</th></tr><tr><td>Capital (£)</td><td>789,600</td><td>884,300</td><td>994,800</td><td>1,126,000</td><td>1,261,200</td></tr><tr><td>Turnover:Capital</td><td>1.4:1</td><td>1.2:1</td><td>1.3:1</td><td>1.4:1</td><td>1.3:1</td></tr><tr><td>Pre-tax Profit (£)</td><td>157,920</td><td>221,000</td><td>218,900</td><td>225,200</td><td>252,400</td></tr></table>`;
-const SS=`<div class="ctitle">Customer Satisfaction Survey — Monthly Regional Report</div><table class="ct"><tr><th>Region</th><th>Poor</th><th>Acceptable</th><th>Good</th><th>Total</th></tr><tr><td>North</td><td>90</td><td>220</td><td>690</td><td>1,000</td></tr><tr><td>South</td><td>120</td><td>520</td><td>1,360</td><td>2,000</td></tr><tr><td>East</td><td>60</td><td>300</td><td>640</td><td>1,000</td></tr><tr><td>West</td><td>30</td><td>160</td><td>810</td><td>1,000</td></tr><tr><td>Central</td><td>80</td><td>440</td><td>980</td><td>1,500</td></tr></table>`;
-const CF=`<div class="ctitle">Company Figures — End of Current Financial Year</div><table class="ct"><tr><th></th><th>Hardlow plc</th><th>GRT plc</th><th>Xiang</th><th>IKO Inc</th><th>Aurore</th></tr><tr><td>Turnover (£m)</td><td>11.4</td><td>160.7</td><td>2.3</td><td>7.3</td><td>60.0</td></tr><tr><td>Profit (£m)</td><td>9.2</td><td>-33.9</td><td>-1.9</td><td>3.0</td><td>9.3</td></tr><tr><td>Assets (£m)</td><td>42.3</td><td>640.1</td><td>25.2</td><td>27.1</td><td>130.1</td></tr><tr><td>Debt (£m)</td><td>9.7</td><td>341.0</td><td>1.7</td><td>8.2</td><td>30.8</td></tr><tr><td>Share Price (p)</td><td>108.0</td><td>172.1</td><td>6.0</td><td>11.3</td><td>48.7</td></tr><tr><td>No. of Shares (m)</td><td>0.5</td><td>2.7</td><td>0.9</td><td>3.2</td><td>7.2</td></tr></table><div class="cnote">m = million</div>`;
+const SK=`<div class="chart-title">Somerset Kitchens<br><span class="chart-sub">Sources of product enquiries</span></div><svg viewBox="0 0 460 230" style="width:100%;max-width:460px">
+<rect x="0" y="0" width="460" height="195" fill="#FFFFCC" stroke="#ccc" stroke-width="0.5"/>
+<text x="115" y="18" font-size="12" font-weight="bold" text-anchor="middle" fill="#111">Last Year</text>
+<text x="345" y="18" font-size="12" font-weight="bold" text-anchor="middle" fill="#111">This Year</text>
+<path d="M115,110 L115.0,38.0 A72,72 0 0 1 170.5,155.9 Z" fill="#993366" stroke="#555" stroke-width="0.6"/><path d="M115,110 L170.5,155.9 A72,72 0 0 1 69.1,165.5 Z" fill="#FFFF99" stroke="#555" stroke-width="0.6"/><path d="M115,110 L69.1,165.5 A72,72 0 0 1 43.1,105.5 Z" fill="#000080" stroke="#555" stroke-width="0.6"/><path d="M115,110 L43.1,105.5 A72,72 0 0 1 78.3,48.0 Z" fill="#FF9900" stroke="#555" stroke-width="0.6"/><path d="M115,110 L78.3,48.0 A72,72 0 0 1 115.0,38.0 Z" fill="#9999FF" stroke="#555" stroke-width="0.6"/><text x="155" y="91" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">36%</text><text x="119" y="154" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" dominant-baseline="middle">25%</text><text x="74" y="128" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">15%</text><text x="77" y="87" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" dominant-baseline="middle">15.5%</text><text x="103" y="67" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">8.5%</text>
+<path d="M345,110 L345.0,38.0 A72,72 0 0 1 387.3,168.2 Z" fill="#993366" stroke="#555" stroke-width="0.6"/><path d="M345,110 L387.3,168.2 A72,72 0 0 1 286.8,152.3 Z" fill="#FFFF99" stroke="#555" stroke-width="0.6"/><path d="M345,110 L286.8,152.3 A72,72 0 0 1 273.0,110.0 Z" fill="#000080" stroke="#555" stroke-width="0.6"/><path d="M345,110 L273.0,110.0 A72,72 0 0 1 302.7,51.8 Z" fill="#FF9900" stroke="#555" stroke-width="0.6"/><path d="M345,110 L302.7,51.8 A72,72 0 0 1 345.0,38.0 Z" fill="#9999FF" stroke="#555" stroke-width="0.6"/><text x="387" y="96" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">40%</text><text x="338" y="154" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" dominant-baseline="middle">25%</text><text x="303" y="124" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">10%</text><text x="305" y="90" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" dominant-baseline="middle">15%</text><text x="331" y="68" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">10%</text>
+</svg><svg viewBox="0 0 460 46" style="width:100%;max-width:460px">
+<rect x="0" y="0" width="460" height="46" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<path d="M12,9 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="27" y="14" font-size="10" fill="#222">Brochures</text><path d="M150,9 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#FFFF99" stroke="#333" stroke-width="0.5"/><text x="165" y="14" font-size="10" fill="#222">Newspapers</text><path d="M300,9 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#000080" stroke="#333" stroke-width="0.5"/><text x="315" y="14" font-size="10" fill="#222">Internet</text>
+<path d="M12,28 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#FF9900" stroke="#333" stroke-width="0.5"/><text x="27" y="33" font-size="10" fill="#222">Recommendations</text><path d="M150,28 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="165" y="33" font-size="10" fill="#222">Telesales</text>
+</svg>`;
+const PA=`<div class="chart-title">Cost of Promotional Activities in Last Financial Year</div><svg viewBox="0 0 460 215" style="width:100%;max-width:460px">
+<rect x="0" y="0" width="460" height="215" fill="#FFFFCC" stroke="#ccc" stroke-width="0.5"/>
+<text x="230" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#111">Total cost over year : £80,000</text>
+<path d="M230,120 L230.0,40.0 A80,80 0 0 1 272.9,52.5 Z" fill="#993366" stroke="#555" stroke-width="0.6"/><path d="M230,120 L272.9,52.5 A80,80 0 0 1 297.5,162.9 Z" fill="#FFFF99" stroke="#555" stroke-width="0.6"/><path d="M230,120 L297.5,162.9 A80,80 0 0 1 159.9,158.5 Z" fill="#000080" stroke="#555" stroke-width="0.6"/><path d="M230,120 L159.9,158.5 A80,80 0 0 1 165.3,73.0 Z" fill="#FF9900" stroke="#555" stroke-width="0.6"/><path d="M230,120 L165.3,73.0 A80,80 0 0 1 230.0,40.0 Z" fill="#9999FF" stroke="#555" stroke-width="0.6"/><text x="244" y="72" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">9%</text><text x="278" y="109" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" dominant-baseline="middle">25%</text><text x="228" y="170" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">33%</text><text x="180" y="117" font-size="10" font-weight="bold" fill="#333" text-anchor="middle" dominant-baseline="middle">18%</text><text x="207" y="76" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">15%</text>
+</svg><svg viewBox="0 0 460 46" style="width:100%;max-width:460px">
+<rect x="0" y="0" width="460" height="46" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<path d="M12,9 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="27" y="14" font-size="10" fill="#222">Stationery</text><path d="M150,9 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#FFFF99" stroke="#333" stroke-width="0.5"/><text x="165" y="14" font-size="10" fill="#222">Leaflets</text><path d="M300,9 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#000080" stroke="#333" stroke-width="0.5"/><text x="315" y="14" font-size="10" fill="#222">Brochures</text>
+<path d="M12,28 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#FF9900" stroke="#333" stroke-width="0.5"/><text x="27" y="33" font-size="10" fill="#222">Advertising</text><path d="M150,28 q3,-6 8,-3 q4,2 1,7 q-4,4 -8,0 q-3,-2 -1,-4 Z" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="165" y="33" font-size="10" fill="#222">Flyers</text>
+</svg>`;
+const JP=`<div class="chart-title">Jenner Pharmaceuticals - Revenue Breakdown</div><svg viewBox="0 0 460 260" style="width:100%;max-width:460px">
+<rect x="50" y="16" width="395" height="195" fill="#FFFFCC" stroke="#999" stroke-width="0.6"/>
+<line x1="50" y1="211.0" x2="445" y2="211.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="214.0" font-size="9" text-anchor="end" fill="#333">0%</text><line x1="50" y1="189.3" x2="445" y2="189.3" stroke="#bbb" stroke-width="0.5"/><text x="45" y="192.3" font-size="9" text-anchor="end" fill="#333">5%</text><line x1="50" y1="167.7" x2="445" y2="167.7" stroke="#bbb" stroke-width="0.5"/><text x="45" y="170.7" font-size="9" text-anchor="end" fill="#333">10%</text><line x1="50" y1="146.0" x2="445" y2="146.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="149.0" font-size="9" text-anchor="end" fill="#333">15%</text><line x1="50" y1="124.3" x2="445" y2="124.3" stroke="#bbb" stroke-width="0.5"/><text x="45" y="127.3" font-size="9" text-anchor="end" fill="#333">20%</text><line x1="50" y1="102.7" x2="445" y2="102.7" stroke="#bbb" stroke-width="0.5"/><text x="45" y="105.7" font-size="9" text-anchor="end" fill="#333">25%</text><line x1="50" y1="81.0" x2="445" y2="81.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="84.0" font-size="9" text-anchor="end" fill="#333">30%</text><line x1="50" y1="59.3" x2="445" y2="59.3" stroke="#bbb" stroke-width="0.5"/><text x="45" y="62.3" font-size="9" text-anchor="end" fill="#333">35%</text><line x1="50" y1="37.7" x2="445" y2="37.7" stroke="#bbb" stroke-width="0.5"/><text x="45" y="40.7" font-size="9" text-anchor="end" fill="#333">40%</text><line x1="50" y1="16.0" x2="445" y2="16.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="19.0" font-size="9" text-anchor="end" fill="#333">45%</text><rect x="71.5" y="102.7" width="16" height="108.3" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="91.5" y="102.7" width="16" height="108.3" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="79.5" y="99.7" font-size="8.5" text-anchor="middle" fill="#111">25%</text><text x="99.5" y="99.7" font-size="8.5" text-anchor="middle" fill="#111">25%</text><rect x="150.5" y="63.7" width="16" height="147.3" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="170.5" y="37.7" width="16" height="173.3" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="158.5" y="60.7" font-size="8.5" text-anchor="middle" fill="#111">34%</text><text x="178.5" y="34.7" font-size="8.5" text-anchor="middle" fill="#111">40%</text><rect x="229.5" y="156.8" width="16" height="54.2" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="249.5" y="167.7" width="16" height="43.3" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="237.5" y="153.8" font-size="8.5" text-anchor="middle" fill="#111">12.5%</text><text x="257.5" y="164.7" font-size="8.5" text-anchor="middle" fill="#111">10%</text><rect x="308.5" y="174.2" width="16" height="36.8" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="328.5" y="167.7" width="16" height="43.3" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="316.5" y="171.2" font-size="8.5" text-anchor="middle" fill="#111">8.5%</text><text x="336.5" y="164.7" font-size="8.5" text-anchor="middle" fill="#111">10%</text><rect x="387.5" y="124.3" width="16" height="86.7" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="407.5" y="146.0" width="16" height="65.0" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="395.5" y="121.3" font-size="8.5" text-anchor="middle" fill="#111">20%</text><text x="415.5" y="143.0" font-size="8.5" text-anchor="middle" fill="#111">15%</text><text x="89.5" y="225" font-size="9.5" text-anchor="middle" fill="#222">Advertising</text><text x="168.5" y="225" font-size="9.5" text-anchor="middle" fill="#222">Salaries</text><text x="247.5" y="225" font-size="9.5" text-anchor="middle" fill="#222">Training</text><text x="326.5" y="225" font-size="9.5" text-anchor="middle" fill="#222">Overheads</text><text x="405.5" y="225" font-size="9.5" text-anchor="middle" fill="#222">Profit</text>
+</svg><svg viewBox="0 0 460 30" style="width:100%;max-width:460px">
+<rect x="90" y="2" width="280" height="26" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<rect x="115" y="9" width="14" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="135" y="18" font-size="10" fill="#222">2002</text>
+<rect x="235" y="9" width="14" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="255" y="18" font-size="10" fill="#222">2003</text>
+</svg>`;
+const DI=`<table class="pdftable"><tr><th class="ttitle" colspan="4">Demographic and Infrastructure Information</th></tr><tr><th class="tblank"></th><th class="thead">Argentina</th><th class="thead">India</th><th class="thead">UK</th></tr><tr><td class="tlabel">GNP (in USA $m*)</td><td class="tval">260,000</td><td class="tval">477,000</td><td class="tval">1,480,000</td></tr><tr><td class="tlabel">Economically Active Population (%)</td><td class="tval">39.67</td><td class="tval">38.82</td><td class="tval">49.68</td></tr><tr><td class="tlabel">Vehicles - Trucks & Buses (m*)</td><td class="tval">0.80</td><td class="tval">2.10</td><td class="tval">4.20</td></tr><tr><td class="tlabel">Vehicles - Cars (m*)</td><td class="tval">5.60</td><td class="tval">10.50</td><td class="tval">21.30</td></tr><tr><td class="tlabel">Telephones (m*)</td><td class="tval">10.50</td><td class="tval">30.60</td><td class="tval">78.40</td></tr><tr><td class="tlabel">Population (m*)</td><td class="tval">37.80</td><td class="tval">1,046</td><td class="tval">59.80</td></tr><tr><td class="tlabel">Urban : Rural Population (%)</td><td class="tval">88:12</td><td class="tval">28:72</td><td class="tval">90:10</td></tr></table><div class="tnote">*m = million</div>`;
+const NG=`<div class="chart-title">Nixon Global</div><svg viewBox="0 0 460 290" style="width:100%;max-width:460px">
+<rect x="50" y="14" width="395" height="210" fill="#FFFFCC" stroke="#999" stroke-width="0.6"/>
+<line x1="50" y1="224.0" x2="445" y2="224.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="227.0" font-size="9" text-anchor="end" fill="#333">-1</text><line x1="50" y1="200.7" x2="445" y2="200.7" stroke="#bbb" stroke-width="0.5"/><text x="45" y="203.7" font-size="9" text-anchor="end" fill="#333">0</text><line x1="50" y1="177.3" x2="445" y2="177.3" stroke="#bbb" stroke-width="0.5"/><text x="45" y="180.3" font-size="9" text-anchor="end" fill="#333">1</text><line x1="50" y1="154.0" x2="445" y2="154.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="157.0" font-size="9" text-anchor="end" fill="#333">2</text><line x1="50" y1="130.7" x2="445" y2="130.7" stroke="#bbb" stroke-width="0.5"/><text x="45" y="133.7" font-size="9" text-anchor="end" fill="#333">3</text><line x1="50" y1="107.3" x2="445" y2="107.3" stroke="#bbb" stroke-width="0.5"/><text x="45" y="110.3" font-size="9" text-anchor="end" fill="#333">4</text><line x1="50" y1="84.0" x2="445" y2="84.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="87.0" font-size="9" text-anchor="end" fill="#333">5</text><line x1="50" y1="60.7" x2="445" y2="60.7" stroke="#bbb" stroke-width="0.5"/><text x="45" y="63.7" font-size="9" text-anchor="end" fill="#333">6</text><line x1="50" y1="37.3" x2="445" y2="37.3" stroke="#bbb" stroke-width="0.5"/><text x="45" y="40.3" font-size="9" text-anchor="end" fill="#333">7</text><line x1="50" y1="14.0" x2="445" y2="14.0" stroke="#bbb" stroke-width="0.5"/><text x="45" y="17.0" font-size="9" text-anchor="end" fill="#333">8</text><line x1="247.5" y1="14" x2="247.5" y2="224" stroke="#333" stroke-width="0.8"/><rect x="64.4" y="147.0" width="17" height="53.7" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="72.9" y="144.0" font-size="9" text-anchor="middle" fill="#111">2.3</text><rect x="84.4" y="182.0" width="17" height="18.7" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="92.9" y="179.0" font-size="9" text-anchor="middle" fill="#111">0.8</text><rect x="130.2" y="95.7" width="17" height="105.0" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="138.8" y="92.7" font-size="9" text-anchor="middle" fill="#111">4.5</text><rect x="150.2" y="179.7" width="17" height="21.0" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="158.8" y="176.7" font-size="9" text-anchor="middle" fill="#111">0.9</text><rect x="196.1" y="44.3" width="17" height="156.3" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="204.6" y="41.3" font-size="9" text-anchor="middle" fill="#111">6.7</text><rect x="216.1" y="200.7" width="17" height="2.3" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="224.6" y="213.0" font-size="9" text-anchor="middle" fill="#111">-0.1</text><rect x="261.9" y="116.7" width="17" height="84.0" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="270.4" y="113.7" font-size="9" text-anchor="middle" fill="#111">3.6</text><rect x="281.9" y="165.7" width="17" height="35.0" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="290.4" y="162.7" font-size="9" text-anchor="middle" fill="#111">1.5</text><rect x="327.8" y="60.7" width="17" height="140.0" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="336.2" y="57.7" font-size="9" text-anchor="middle" fill="#111">6.0</text><rect x="347.8" y="154.0" width="17" height="46.7" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="356.2" y="151.0" font-size="9" text-anchor="middle" fill="#111">2.0</text><rect x="393.6" y="14.0" width="17" height="186.7" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="402.1" y="11.0" font-size="9" text-anchor="middle" fill="#111">8.0</text><rect x="413.6" y="177.3" width="17" height="23.3" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="422.1" y="174.3" font-size="9" text-anchor="middle" fill="#111">1.0</text><line x1="50" y1="200.7" x2="445" y2="200.7" stroke="#333" stroke-width="0.9"/><text x="148.8" y="26" font-size="11" font-weight="bold" text-anchor="middle" fill="#111">2000</text><text x="82.9" y="237" font-size="9.5" text-anchor="middle" fill="#222">US</text><text x="82.9" y="248" font-size="9" text-anchor="middle" fill="#222">(32)</text><text x="148.8" y="237" font-size="9.5" text-anchor="middle" fill="#222">Europe</text><text x="148.8" y="248" font-size="9" text-anchor="middle" fill="#222">(62)</text><text x="214.6" y="237" font-size="9.5" text-anchor="middle" fill="#222">Asia</text><text x="214.6" y="248" font-size="9" text-anchor="middle" fill="#222">(50)</text><text x="346.2" y="26" font-size="11" font-weight="bold" text-anchor="middle" fill="#111">2003</text><text x="280.4" y="237" font-size="9.5" text-anchor="middle" fill="#222">US</text><text x="280.4" y="248" font-size="9" text-anchor="middle" fill="#222">(50)</text><text x="346.2" y="237" font-size="9.5" text-anchor="middle" fill="#222">Europe</text><text x="346.2" y="248" font-size="9" text-anchor="middle" fill="#222">(48)</text><text x="412.1" y="237" font-size="9.5" text-anchor="middle" fill="#222">Asia</text><text x="412.1" y="248" font-size="9" text-anchor="middle" fill="#222">(40)</text>
+<text x="13" y="119.0" font-size="9.5" text-anchor="middle" fill="#222" transform="rotate(-90 13 119.0)">US Dollars ($1,000 million)</text>
+<text x="247.5" y="268" font-size="10" text-anchor="middle" fill="#222">Region</text>
+<text x="247.5" y="280" font-size="9.5" text-anchor="middle" fill="#222">(no. of companies)</text>
+</svg><svg viewBox="0 0 460 30" style="width:100%;max-width:460px">
+<rect x="95" y="2" width="270" height="26" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<rect x="115" y="9" width="14" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="135" y="18" font-size="10" fill="#222">Revenue</text>
+<rect x="235" y="9" width="14" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="255" y="18" font-size="10" fill="#222">Operating Profit</text>
+</svg>`;
+const EM=`<div class="chart-title">Employment Breakdown - Market Sector by Gender</div><svg viewBox="0 0 460 270" style="width:100%;max-width:460px">
+<rect x="46" y="14" width="402" height="190" fill="#FFFFCC" stroke="#999" stroke-width="0.6"/>
+<line x1="46" y1="204.0" x2="448" y2="204.0" stroke="#bbb" stroke-width="0.5"/><text x="42" y="207.0" font-size="9" text-anchor="end" fill="#333">0%</text><line x1="46" y1="180.2" x2="448" y2="180.2" stroke="#bbb" stroke-width="0.5"/><text x="42" y="183.2" font-size="9" text-anchor="end" fill="#333">5%</text><line x1="46" y1="156.5" x2="448" y2="156.5" stroke="#bbb" stroke-width="0.5"/><text x="42" y="159.5" font-size="9" text-anchor="end" fill="#333">10%</text><line x1="46" y1="132.8" x2="448" y2="132.8" stroke="#bbb" stroke-width="0.5"/><text x="42" y="135.8" font-size="9" text-anchor="end" fill="#333">15%</text><line x1="46" y1="109.0" x2="448" y2="109.0" stroke="#bbb" stroke-width="0.5"/><text x="42" y="112.0" font-size="9" text-anchor="end" fill="#333">20%</text><line x1="46" y1="85.2" x2="448" y2="85.2" stroke="#bbb" stroke-width="0.5"/><text x="42" y="88.2" font-size="9" text-anchor="end" fill="#333">25%</text><line x1="46" y1="61.5" x2="448" y2="61.5" stroke="#bbb" stroke-width="0.5"/><text x="42" y="64.5" font-size="9" text-anchor="end" fill="#333">30%</text><line x1="46" y1="37.8" x2="448" y2="37.8" stroke="#bbb" stroke-width="0.5"/><text x="42" y="40.8" font-size="9" text-anchor="end" fill="#333">35%</text><line x1="46" y1="14.0" x2="448" y2="14.0" stroke="#bbb" stroke-width="0.5"/><text x="42" y="17.0" font-size="9" text-anchor="end" fill="#333">40%</text><rect x="65.0" y="94.8" width="13" height="109.2" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="81.0" y="156.5" width="13" height="47.5" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="71.5" y="91.8" font-size="8.5" text-anchor="middle" fill="#111">23%</text><text x="87.5" y="153.5" font-size="8.5" text-anchor="middle" fill="#111">10%</text><rect x="132.0" y="142.2" width="13" height="61.8" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="148.0" y="37.8" width="13" height="166.2" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="138.5" y="139.2" font-size="8.5" text-anchor="middle" fill="#111">13%</text><text x="154.5" y="34.8" font-size="8.5" text-anchor="middle" fill="#111">35%</text><rect x="199.0" y="118.5" width="13" height="85.5" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="215.0" y="85.2" width="13" height="118.8" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="205.5" y="115.5" font-size="8.5" text-anchor="middle" fill="#111">18%</text><text x="221.5" y="82.2" font-size="8.5" text-anchor="middle" fill="#111">25%</text><rect x="266.0" y="147.0" width="13" height="57.0" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="282.0" y="199.2" width="13" height="4.8" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="272.5" y="144.0" font-size="8.5" text-anchor="middle" fill="#111">12%</text><text x="288.5" y="196.2" font-size="8.5" text-anchor="middle" fill="#111">1%</text><rect x="333.0" y="147.0" width="13" height="57.0" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="349.0" y="132.8" width="13" height="71.2" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="339.5" y="144.0" font-size="8.5" text-anchor="middle" fill="#111">12%</text><text x="355.5" y="129.8" font-size="8.5" text-anchor="middle" fill="#111">15%</text><rect x="400.0" y="99.5" width="13" height="104.5" fill="#993366" stroke="#333" stroke-width="0.5"/><rect x="416.0" y="137.5" width="13" height="66.5" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="406.5" y="96.5" font-size="8.5" text-anchor="middle" fill="#111">22%</text><text x="422.5" y="134.5" font-size="8.5" text-anchor="middle" fill="#111">14%</text><text x="79.5" y="214" font-size="8.5" text-anchor="end" fill="#222" transform="rotate(-45 79.5 214)">Production</text><text x="146.5" y="214" font-size="8.5" text-anchor="end" fill="#222" transform="rotate(-45 146.5 214)">Finance</text><text x="213.5" y="214" font-size="8.5" text-anchor="end" fill="#222" transform="rotate(-45 213.5 214)">Distribution</text><text x="280.5" y="214" font-size="8.5" text-anchor="end" fill="#222" transform="rotate(-45 280.5 214)">Construction</text><text x="347.5" y="214" font-size="8.5" text-anchor="end" fill="#222" transform="rotate(-45 347.5 214)">Admin</text><text x="414.5" y="214" font-size="8.5" text-anchor="end" fill="#222" transform="rotate(-45 414.5 214)">Other</text>
+</svg><svg viewBox="0 0 460 30" style="width:100%;max-width:460px">
+<rect x="60" y="2" width="340" height="26" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<rect x="85" y="9" width="14" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="105" y="18" font-size="10" fill="#222">Men (14,000,000)</text>
+<rect x="245" y="9" width="14" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="265" y="18" font-size="10" fill="#222">Women (6,000,000)</text>
+</svg>`;
+const CG=`<div class="chart-title">Projected Consumer Goods Exports</div><svg viewBox="0 0 460 250" style="width:100%;max-width:460px">
+<rect x="40" y="12" width="390" height="200" fill="#FFFFCC" stroke="#999" stroke-width="0.6"/>
+<line x1="40.0" y1="12" x2="40.0" y2="212" stroke="#bbb" stroke-width="0.5"/><text x="40.0" y="224" font-size="9" text-anchor="middle" fill="#333">0</text><line x1="118.0" y1="12" x2="118.0" y2="212" stroke="#bbb" stroke-width="0.5"/><text x="118.0" y="224" font-size="9" text-anchor="middle" fill="#333">100</text><line x1="196.0" y1="12" x2="196.0" y2="212" stroke="#bbb" stroke-width="0.5"/><text x="196.0" y="224" font-size="9" text-anchor="middle" fill="#333">200</text><line x1="274.0" y1="12" x2="274.0" y2="212" stroke="#bbb" stroke-width="0.5"/><text x="274.0" y="224" font-size="9" text-anchor="middle" fill="#333">300</text><line x1="352.0" y1="12" x2="352.0" y2="212" stroke="#bbb" stroke-width="0.5"/><text x="352.0" y="224" font-size="9" text-anchor="middle" fill="#333">400</text><line x1="430.0" y1="12" x2="430.0" y2="212" stroke="#bbb" stroke-width="0.5"/><text x="430.0" y="224" font-size="9" text-anchor="middle" fill="#333">500</text><rect x="40" y="20.0" width="70.2" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="114.2" y="28.5" font-size="8.5" fill="#111">90</text><rect x="40" y="33.0" width="351.0" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="395.0" y="41.5" font-size="8.5" fill="#111">450</text><text x="33" y="35.0" font-size="10" text-anchor="end" fill="#222">5</text><rect x="40" y="60.0" width="62.4" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="106.4" y="68.5" font-size="8.5" fill="#111">80</text><rect x="40" y="73.0" width="327.6" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="371.6" y="81.5" font-size="8.5" fill="#111">420</text><text x="33" y="75.0" font-size="10" text-anchor="end" fill="#222">4</text><rect x="40" y="100.0" width="62.4" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="106.4" y="108.5" font-size="8.5" fill="#111">80</text><rect x="40" y="113.0" width="273.0" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="317.0" y="121.5" font-size="8.5" fill="#111">350</text><text x="33" y="115.0" font-size="10" text-anchor="end" fill="#222">3</text><rect x="40" y="140.0" width="54.6" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="98.6" y="148.5" font-size="8.5" fill="#111">70</text><rect x="40" y="153.0" width="257.4" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="301.4" y="161.5" font-size="8.5" fill="#111">330</text><text x="33" y="155.0" font-size="10" text-anchor="end" fill="#222">2</text><rect x="40" y="180.0" width="46.8" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="90.8" y="188.5" font-size="8.5" fill="#111">60</text><rect x="40" y="193.0" width="234.0" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="278.0" y="201.5" font-size="8.5" fill="#111">300</text><text x="33" y="195.0" font-size="10" text-anchor="end" fill="#222">1</text>
+<text x="14" y="112.0" font-size="10" text-anchor="middle" fill="#222" transform="rotate(-90 14 112.0)">Year (Y)</text>
+<text x="235.0" y="246" font-size="10" text-anchor="middle" font-weight="bold" fill="#222">Hong Kong Dollars (millions)</text>
+</svg><svg viewBox="0 0 460 76" style="width:100%;max-width:460px">
+<rect x="100" y="0" width="260" height="24" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<rect x="125" y="7" width="14" height="11" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="145" y="16" font-size="10" fill="#222">Singapore</text>
+<rect x="235" y="7" width="14" height="11" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="255" y="16" font-size="10" fill="#222">Hong Kong</text>
+<rect x="40" y="30" width="380" height="44" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<text x="230" y="43" font-size="9.5" text-anchor="middle" fill="#222">Exchange Rates for Years 1 to 5</text>
+<text x="230" y="55" font-size="9.5" text-anchor="middle" fill="#222">$4.50 Hong Kong Dollar (HKD) = $1 Singapore Dollar (SGD)</text>
+<text x="230" y="67" font-size="9.5" text-anchor="middle" fill="#222">$1.60 Singapore Dollar (SGD) = $1 US Dollar (USD)</text>
+</svg>`;
+const EC=`<div class="chart-title">Elite Conservatories</div><svg viewBox="0 0 460 250" style="width:100%;max-width:460px">
+<rect x="48" y="12" width="392" height="190" fill="#FFFFCC" stroke="#999" stroke-width="0.6"/>
+<line x1="48" y1="202.0" x2="440" y2="202.0" stroke="#bbb" stroke-width="0.5"/><text x="43" y="205.0" font-size="9" text-anchor="end" fill="#333">0</text><line x1="48" y1="180.9" x2="440" y2="180.9" stroke="#bbb" stroke-width="0.5"/><text x="43" y="183.9" font-size="9" text-anchor="end" fill="#333">100</text><line x1="48" y1="159.8" x2="440" y2="159.8" stroke="#bbb" stroke-width="0.5"/><text x="43" y="162.8" font-size="9" text-anchor="end" fill="#333">200</text><line x1="48" y1="138.7" x2="440" y2="138.7" stroke="#bbb" stroke-width="0.5"/><text x="43" y="141.7" font-size="9" text-anchor="end" fill="#333">300</text><line x1="48" y1="117.6" x2="440" y2="117.6" stroke="#bbb" stroke-width="0.5"/><text x="43" y="120.6" font-size="9" text-anchor="end" fill="#333">400</text><line x1="48" y1="96.4" x2="440" y2="96.4" stroke="#bbb" stroke-width="0.5"/><text x="43" y="99.4" font-size="9" text-anchor="end" fill="#333">500</text><line x1="48" y1="75.3" x2="440" y2="75.3" stroke="#bbb" stroke-width="0.5"/><text x="43" y="78.3" font-size="9" text-anchor="end" fill="#333">600</text><line x1="48" y1="54.2" x2="440" y2="54.2" stroke="#bbb" stroke-width="0.5"/><text x="43" y="57.2" font-size="9" text-anchor="end" fill="#333">700</text><line x1="48" y1="33.1" x2="440" y2="33.1" stroke="#bbb" stroke-width="0.5"/><text x="43" y="36.1" font-size="9" text-anchor="end" fill="#333">800</text><line x1="48" y1="12.0" x2="440" y2="12.0" stroke="#bbb" stroke-width="0.5"/><text x="43" y="15.0" font-size="9" text-anchor="end" fill="#333">900</text>
+<path d="M48.0,54.2 L126.4,33.1 L204.8,54.2 L283.2,75.3 L361.6,96.4 L440.0,117.6" fill="none" stroke="#993366" stroke-width="1.6"/><path d="M44.5,50.7 L51.5,57.7 M44.5,57.7 L51.5,50.7" stroke="#993366" stroke-width="1.6"/><path d="M122.9,29.6 L129.9,36.6 M122.9,36.6 L129.9,29.6" stroke="#993366" stroke-width="1.6"/><path d="M201.3,50.7 L208.3,57.7 M201.3,57.7 L208.3,50.7" stroke="#993366" stroke-width="1.6"/><path d="M279.7,71.8 L286.7,78.8 M279.7,78.8 L286.7,71.8" stroke="#993366" stroke-width="1.6"/><path d="M358.1,92.9 L365.1,99.9 M358.1,99.9 L365.1,92.9" stroke="#993366" stroke-width="1.6"/><path d="M436.5,114.1 L443.5,121.1 M436.5,121.1 L443.5,114.1" stroke="#993366" stroke-width="1.6"/>
+<path d="M48.0,159.8 L126.4,117.6 L204.8,96.4 L283.2,75.3 L361.6,54.2 L440.0,96.4" fill="none" stroke="#FF9900" stroke-width="1.6"/><rect x="45.0" y="156.8" width="6" height="6" fill="#FF9900" stroke="#333" stroke-width="0.4"/><rect x="123.4" y="114.6" width="6" height="6" fill="#FF9900" stroke="#333" stroke-width="0.4"/><rect x="201.8" y="93.4" width="6" height="6" fill="#FF9900" stroke="#333" stroke-width="0.4"/><rect x="280.2" y="72.3" width="6" height="6" fill="#FF9900" stroke="#333" stroke-width="0.4"/><rect x="358.6" y="51.2" width="6" height="6" fill="#FF9900" stroke="#333" stroke-width="0.4"/><rect x="437.0" y="93.4" width="6" height="6" fill="#FF9900" stroke="#333" stroke-width="0.4"/>
+<path d="M48.0,117.6 L126.4,159.8 L204.8,138.7 L283.2,96.4 L361.6,117.6 L440.0,138.7" fill="none" stroke="#9999FF" stroke-width="1.6"/><path d="M48.0,113.6 L52.0,120.6 L44.0,120.6 Z" fill="#9999FF" stroke="#333" stroke-width="0.4"/><path d="M126.4,155.8 L130.4,162.8 L122.4,162.8 Z" fill="#9999FF" stroke="#333" stroke-width="0.4"/><path d="M204.8,134.7 L208.8,141.7 L200.8,141.7 Z" fill="#9999FF" stroke="#333" stroke-width="0.4"/><path d="M283.2,92.4 L287.2,99.4 L279.2,99.4 Z" fill="#9999FF" stroke="#333" stroke-width="0.4"/><path d="M361.6,113.6 L365.6,120.6 L357.6,120.6 Z" fill="#9999FF" stroke="#333" stroke-width="0.4"/><path d="M440.0,134.7 L444.0,141.7 L436.0,141.7 Z" fill="#9999FF" stroke="#333" stroke-width="0.4"/>
+<text x="48.0" y="216" font-size="9.5" text-anchor="middle" fill="#222">1997</text><text x="126.4" y="216" font-size="9.5" text-anchor="middle" fill="#222">1998</text><text x="204.8" y="216" font-size="9.5" text-anchor="middle" fill="#222">1999</text><text x="283.2" y="216" font-size="9.5" text-anchor="middle" fill="#222">2000</text><text x="361.6" y="216" font-size="9.5" text-anchor="middle" fill="#222">2001</text><text x="440.0" y="216" font-size="9.5" text-anchor="middle" fill="#222">2002</text>
+<text x="14" y="107.0" font-size="10" text-anchor="middle" fill="#222" transform="rotate(-90 14 107.0)">Number sold</text>
+<text x="244.0" y="246" font-size="10" text-anchor="middle" font-weight="bold" fill="#222">Year</text>
+</svg><svg viewBox="0 0 460 30" style="width:100%;max-width:460px">
+<rect x="20" y="2" width="420" height="26" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<path d="M50,12 L58,20 M50,20 L58,12" stroke="#993366" stroke-width="1.6"/><text x="66" y="19" font-size="10" fill="#222">Pine</text>
+<rect x="175" y="11" width="8" height="8" fill="#FF9900" stroke="#333" stroke-width="0.4"/><text x="190" y="19" font-size="10" fill="#222">Hardwood</text>
+<path d="M320,19 L328,19 L324,11 Z" fill="#9999FF" stroke="#333" stroke-width="0.4"/><text x="335" y="19" font-size="10" fill="#222">UPVC</text>
+</svg>`;
+const GS=`<div class="chart-title">Gallini Shoes<br><span class="chart-sub">International Sales</span></div><svg viewBox="0 0 460 200" style="width:100%;max-width:460px">
+<rect x="70" y="10" width="360" height="130" fill="#FFFFCC" stroke="#999" stroke-width="0.5"/>
+<rect x="70.0" y="26" width="126.0" height="34" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="133.0" y="46.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">35%</text><rect x="196.0" y="26" width="75.6" height="34" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="233.8" y="46.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#222">21%</text><rect x="271.6" y="26" width="54.0" height="34" fill="#FFFF99" stroke="#333" stroke-width="0.5"/><text x="298.6" y="46.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#222">15%</text><rect x="325.6" y="26" width="68.4" height="34" fill="#000080" stroke="#333" stroke-width="0.5"/><text x="359.8" y="46.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">19%</text><rect x="394.0" y="26" width="36.0" height="34" fill="#C0C0C0" stroke="#333" stroke-width="0.5"/><text x="412.0" y="46.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#222">10%</text>
+<rect x="70.0" y="84" width="72.0" height="34" fill="#993366" stroke="#333" stroke-width="0.5"/><text x="106.0" y="104.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">20%</text><rect x="142.0" y="84" width="75.6" height="34" fill="#9999FF" stroke="#333" stroke-width="0.5"/><text x="179.8" y="104.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#222">21%</text><rect x="217.6" y="84" width="133.2" height="34" fill="#FFFF99" stroke="#333" stroke-width="0.5"/><text x="284.2" y="104.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#222">37%</text><rect x="350.8" y="84" width="61.2" height="34" fill="#000080" stroke="#333" stroke-width="0.5"/><text x="381.4" y="104.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">17%</text><rect x="412.0" y="84" width="18.0" height="34" fill="#C0C0C0" stroke="#333" stroke-width="0.5"/><text x="421.0" y="104.5" font-size="9" font-weight="bold" text-anchor="middle" fill="#222">5%</text>
+<text x="64" y="42.0" font-size="9" text-anchor="end" fill="#222">Ladies</text>
+<text x="64" y="53.0" font-size="8.5" text-anchor="end" fill="#222">(€4,000m)</text>
+<text x="64" y="100.0" font-size="9" text-anchor="end" fill="#222">Mens</text>
+<text x="64" y="111.0" font-size="8.5" text-anchor="end" fill="#222">(€2,000m)</text>
+<text x="70.0" y="155" font-size="9" text-anchor="middle" fill="#333">0%</text><text x="142.0" y="155" font-size="9" text-anchor="middle" fill="#333">20%</text><text x="214.0" y="155" font-size="9" text-anchor="middle" fill="#333">40%</text><text x="286.0" y="155" font-size="9" text-anchor="middle" fill="#333">60%</text><text x="358.0" y="155" font-size="9" text-anchor="middle" fill="#333">80%</text><text x="430.0" y="155" font-size="9" text-anchor="middle" fill="#333">100%</text>
+</svg><svg viewBox="0 0 460 50" style="width:100%;max-width:460px">
+<rect x="20" y="0" width="420" height="48" fill="#fff" stroke="#333" stroke-width="0.8"/>
+<rect x="40" y="8" width="12" height="10" fill="#993366"/><text x="58" y="17" font-size="9.5" fill="#222">Italy</text>
+<rect x="160" y="8" width="12" height="10" fill="#9999FF"/><text x="178" y="17" font-size="9.5" fill="#222">France</text>
+<rect x="290" y="8" width="12" height="10" fill="#FFFF99" stroke="#999" stroke-width="0.4"/><text x="308" y="17" font-size="9.5" fill="#222">UK</text>
+<rect x="40" y="28" width="12" height="10" fill="#000080"/><text x="58" y="37" font-size="9.5" fill="#222">Rest of Europe</text>
+<rect x="160" y="28" width="12" height="10" fill="#C0C0C0"/><text x="178" y="37" font-size="9.5" fill="#222">Rest of World</text>
+</svg>`;
+const PB=`<table class="pdftable"><tr><th class="ttitle" colspan="7">Population (millions) - Breakdown by Age</th></tr><tr><th class="tblank"></th><th class="thead" colspan="5" style="background:#000;color:#fff">Age Bands</th><th class="tblank"></th></tr><tr><th class="tblank"></th><th class="thead">Under 16</th><th class="thead">16-39</th><th class="thead">40-64</th><th class="thead">65-79</th><th class="thead">80 and over</th><th class="thead">Total</th></tr><tr><td class="tlabel">1970</td><td class="tval">13.2</td><td class="tval">16.5</td><td class="tval">16.9</td><td class="tval">5.2</td><td class="tval">1.0</td><td class="tval">52.8</td></tr><tr><td class="tlabel">1980</td><td class="tval">13.8</td><td class="tval">17.5</td><td class="tval">17.3</td><td class="tval">6.1</td><td class="tval">1.3</td><td class="tval">56.0</td></tr><tr><td class="tlabel">1990</td><td class="tval">12.5</td><td class="tval">19.7</td><td class="tval">15.7</td><td class="tval">6.9</td><td class="tval">1.6</td><td class="tval">56.4</td></tr><tr><td class="tlabel">2000</td><td class="tval">11.7</td><td class="tval">20.3</td><td class="tval">16.5</td><td class="tval">6.9</td><td class="tval">2.2</td><td class="tval">57.6</td></tr></table>`;
+const GO=`<table class="pdftable"><tr><th class="ttitle" colspan="6">Galmar Desert Oil<br>Comparative Costs - 2002</th></tr><tr><th class="tblank"></th><th class="thead" colspan="5" style="background:#000;color:#fff">Field</th></tr><tr><th class="tblank"></th><th class="thead">Sapphire</th><th class="thead">Emerald</th><th class="thead">Topaz</th><th class="thead">Diamond</th><th class="thead">Amethyst</th></tr><tr><td class="tlabel">Average Daily Output (1,000s barrels)</td><td class="tval">150</td><td class="tval">224</td><td class="tval">418</td><td class="tval">510</td><td class="tval">240</td></tr><tr><td class="tlabel">Total Output as % of previous year</td><td class="tval">90%</td><td class="tval">80%</td><td class="tval">110%</td><td class="tval">150%</td><td class="tval">75%</td></tr><tr><td class="tlabel">Operating Costs for year ($m*)</td><td class="tval">210</td><td class="tval">240</td><td class="tval">375</td><td class="tval">300</td><td class="tval">120</td></tr><tr><td class="tlabel">Exploration &amp; Capital Costs ($m*)</td><td class="tval">9,000</td><td class="tval">6,000</td><td class="tval">12,000</td><td class="tval">8,000</td><td class="tval">12,000</td></tr></table><div class="tnote">*m = million</div>`;
+const BU=`<table class="pdftable"><tr><th class="ttitle" colspan="3">Burlington Security Systems<br>Sales Rep Mileage Chart</th></tr><tr><th class="tcorner">Week</th><th class="thead">Grant</th><th class="thead">Hooper</th></tr><tr><td class="tlabel">1</td><td class="tval">490</td><td class="tval">630</td></tr><tr><td class="tlabel">2</td><td class="tval">502</td><td class="tval">322</td></tr><tr><td class="tlabel">3</td><td class="tval">307</td><td class="tval">496</td></tr><tr><td class="tlabel">4</td><td class="tval">752</td><td class="tval">525</td></tr><tr><td class="tlabel">5</td><td class="tval">487</td><td class="tval">821</td></tr></table>`;
+const JR=`<table class="pdftable"><tr><th class="ttitle" colspan="6">Jarrow Group Company Figures — End 2002</th></tr><tr><th class="tblank"></th><th class="thead">Gilcrest</th><th class="thead">J Barnard</th><th class="thead">Felton Fin.</th><th class="thead">HLB Plc</th><th class="thead">Stonemore</th></tr><tr><td class="tlabel">Capital (£m)</td><td class="tval">42.3</td><td class="tval">640.1</td><td class="tval">25.2</td><td class="tval">27.1</td><td class="tval">130.1</td></tr><tr><td class="tlabel">Turnover (£m)</td><td class="tval">11.4</td><td class="tval">160.7</td><td class="tval">2.3</td><td class="tval">7.3</td><td class="tval">60.0</td></tr><tr><td class="tlabel">Profit (£m)</td><td class="tval">9.2</td><td class="tval">-33.9</td><td class="tval">-1.9</td><td class="tval">3.0</td><td class="tval">9.3</td></tr><tr><td class="tlabel">Debt (£m)</td><td class="tval">9.7</td><td class="tval">341.0</td><td class="tval">1.7</td><td class="tval">8.2</td><td class="tval">30.8</td></tr><tr><td class="tlabel">Share Price (p)</td><td class="tval">108.0</td><td class="tval">172.1</td><td class="tval">60.0</td><td class="tval">11.3</td><td class="tval">48.7</td></tr><tr><td class="tlabel">No. of Shares (m)</td><td class="tval">0.5</td><td class="tval">2.7</td><td class="tval">0.9</td><td class="tval">3.2</td><td class="tval">7.2</td></tr></table>`;
+const IP=`<table class="pdftable"><tr><th class="ttitle" colspan="5">International Product Sales (Sales Revenue £1,000s)</th></tr><tr><th class="tcorner" rowspan="2">Product<br>Stock Codes</th><th class="thead" colspan="2">Europe</th><th class="thead" colspan="2">North America</th></tr><tr><th class="thead">Last Year</th><th class="thead">This Year</th><th class="thead">Last Year</th><th class="thead">This Year</th></tr><tr><td class="tlabel">A002</td><td class="tval">17</td><td class="tval">31</td><td class="tval">410</td><td class="tval">354</td></tr><tr><td class="tlabel">B008</td><td class="tval">26</td><td class="tval">56</td><td class="tval">18</td><td class="tval">59</td></tr><tr><td class="tlabel">C015</td><td class="tval">21</td><td class="tval">69</td><td class="tval">27</td><td class="tval">71</td></tr><tr><td class="tlabel">D024</td><td class="tval">37</td><td class="tval">67</td><td class="tval">13</td><td class="tval">50</td></tr><tr><td class="tlabel">E001</td><td class="tval">31</td><td class="tval">32</td><td class="tval">19</td><td class="tval">37</td></tr><tr><td class="tlabel">F073</td><td class="tval">36</td><td class="tval">16</td><td class="tval">29</td><td class="tval">19</td></tr></table>`;
+const CS=`<table class="pdftable"><tr><th class="ttitle" colspan="3">Confederated Stores Group (CSG)</th></tr><tr><th class="tcorner">Daily Sales</th><th class="thead">Urban Outlets</th><th class="thead">Rural Outlets</th></tr><tr><td class="tlabel">Under £5,000</td><td class="tval">256</td><td class="tval">58</td></tr><tr><td class="tlabel">£5,000 – £9,999</td><td class="tval">1,532</td><td class="tval">378</td></tr><tr><td class="tlabel">£10,000 – £14,999</td><td class="tval">4,260</td><td class="tval">1,252</td></tr><tr><td class="tlabel">£15,000 – £19,999</td><td class="tval">4,874</td><td class="tval">1,346</td></tr><tr><td class="tlabel">£20,000 – £24,999</td><td class="tval">4,510</td><td class="tval">1,522</td></tr><tr><td class="tlabel">£25,000 – £29,999</td><td class="tval">1,544</td><td class="tval">572</td></tr><tr><td class="tlabel">£30,000 – £50,000</td><td class="tval">340</td><td class="tval">148</td></tr><tr><td class="tlabel">Over £50,000</td><td class="tval">90</td><td class="tval">14</td></tr><tr><td class="tlabel"><b>Total</b></td><td class="tval"><b>17,406</b></td><td class="tval"><b>5,290</b></td></tr></table>`;
+const TR=`<table class="pdftable"><tr><th class="ttitle" colspan="3">Tresco Group — Weekly Sales Distribution</th></tr><tr><th class="tblank"></th><th class="thead">Bars w/o Restaurant</th><th class="thead">Bars with Restaurant</th></tr><tr><td class="tlabel">Under £30,000</td><td class="tval">18</td><td class="tval">60</td></tr><tr><td class="tlabel">£30,000 – £39,999</td><td class="tval">124</td><td class="tval">548</td></tr><tr><td class="tlabel">£40,000 – £49,999</td><td class="tval">315</td><td class="tval">961</td></tr><tr><td class="tlabel">£50,000 – £59,999</td><td class="tval">412</td><td class="tval">1,650</td></tr><tr><td class="tlabel">£60,000 – £69,999</td><td class="tval">562</td><td class="tval">2,356</td></tr><tr><td class="tlabel">£70,000 – £79,999</td><td class="tval">470</td><td class="tval">3,150</td></tr><tr><td class="tlabel">£80,000 – £89,999</td><td class="tval">220</td><td class="tval">2,754</td></tr><tr><td class="tlabel">£90,000 – £100,000</td><td class="tval">75</td><td class="tval">1,679</td></tr><tr><td class="tlabel">Over £100,000</td><td class="tval">4</td><td class="tval">42</td></tr></table>`;
+const SC=`<table class="pdftable"><tr><th class="ttitle" colspan="6">Starlight Cosmetics</th></tr><tr><th class="tblank"></th><th class="thead" colspan="5" style="background:#000;color:#fff">Year</th></tr><tr><th class="tblank"></th><th class="thead">1998</th><th class="thead">1999</th><th class="thead">2000</th><th class="thead">2001</th><th class="thead">2002</th></tr><tr><td class="tlabel">Capital</td><td class="tval">£789,600</td><td class="tval">£884,300</td><td class="tval">£994,800</td><td class="tval">£1,126,000</td><td class="tval">£1,261,200</td></tr><tr><td class="tlabel">Ratio (turnover: capital)</td><td class="tval">1.4:1</td><td class="tval">1.2:1</td><td class="tval">1.3:1</td><td class="tval">1.4:1</td><td class="tval">1.3:1</td></tr><tr><td class="tlabel">Pre-tax Profit</td><td class="tval">£157,920</td><td class="tval">£221,000</td><td class="tval">£218,900</td><td class="tval">£225,200</td><td class="tval">£252,400</td></tr></table>`;
+const SS=`<table class="pdftable"><tr><th class="ttitle" colspan="4">Customer Satisfaction Survey<br>Monthly Regional Report</th></tr><tr><th class="tblank"></th><th class="thead" colspan="3" style="background:#000;color:#fff">Ratings Received</th></tr><tr><th class="tblank"></th><th class="thead">Poor</th><th class="thead">Acceptable</th><th class="thead">Good</th></tr><tr><td class="tlabel">North</td><td class="tval">90</td><td class="tval">220</td><td class="tval">690</td></tr><tr><td class="tlabel">South</td><td class="tval">120</td><td class="tval">520</td><td class="tval">1,360</td></tr><tr><td class="tlabel">East</td><td class="tval">60</td><td class="tval">300</td><td class="tval">640</td></tr><tr><td class="tlabel">West</td><td class="tval">30</td><td class="tval">160</td><td class="tval">810</td></tr><tr><td class="tlabel">Central</td><td class="tval">80</td><td class="tval">440</td><td class="tval">980</td></tr></table>`;
+const CF=`<table class="pdftable"><tr><th class="ttitle" colspan="6">Company Figures at the end of the current Financial Year</th></tr><tr><th class="tblank"></th><th class="thead">Hardlow plc</th><th class="thead">GRT plc</th><th class="thead">Xiang</th><th class="thead">IKO Inc</th><th class="thead">Aurore</th></tr><tr><td class="tlabel">Turnover (£m*)</td><td class="tval">11.4</td><td class="tval">160.7</td><td class="tval">2.3</td><td class="tval">7.3</td><td class="tval">60.0</td></tr><tr><td class="tlabel">Profit (£m*)</td><td class="tval">9.2</td><td class="tval">-33.9</td><td class="tval">-1.9</td><td class="tval">3.0</td><td class="tval">9.3</td></tr><tr><td class="tlabel">Assets (£m*)</td><td class="tval">42.3</td><td class="tval">640.1</td><td class="tval">25.2</td><td class="tval">27.1</td><td class="tval">130.1</td></tr><tr><td class="tlabel">Debt (£m*)</td><td class="tval">9.7</td><td class="tval">341.0</td><td class="tval">1.7</td><td class="tval">8.2</td><td class="tval">30.8</td></tr><tr><td class="tlabel">Share Price (pence)</td><td class="tval">108.0</td><td class="tval">172.1</td><td class="tval">6.0</td><td class="tval">11.3</td><td class="tval">48.7</td></tr><tr><td class="tlabel">No. of Shares (m*)</td><td class="tval">0.5</td><td class="tval">2.7</td><td class="tval">0.9</td><td class="tval">3.2</td><td class="tval">7.2</td></tr></table><div class="tnote">*m = millions</div>`;
 
 const CHARTS=[
 {id:1,num:"Set 1",title:"Somerset Kitchens",html:SK,qs:[
@@ -158,38 +278,32 @@ const CHARTS=[
 {q:"If Internet = 12,000 enquiries this year, how many did Recommendations produce THIS year?",opts:["16,000","18,000","20,000","22,000","Cannot say"],a:"18,000",sol:"Internet 10%=12,000 → Total=120,000. Recommendations=15%×120,000=18,000."},
 {q:"Which source of product enquiry is the LEAST cost-effective?",opts:["Brochures","Newspapers","Internet","Telesales","Cannot say"],a:"Cannot say",sol:"No cost data — cannot be determined."},
 {q:"If Telesales generated 12,000 enquiries this year, how many did the Internet generate LAST year?",opts:["12,000","15,000","18,000","21,000","Cannot say"],a:"Cannot say",sol:"Telesales this year=10%=12,000 → Total this year=120,000. But last year's total is unknown."},
-{q:"If Newspapers generated 22,500 enquiries for Somerset Kitchens last year, how many enquiries did the Internet produce that year?",opts:["7,650","8,437","13,500","15,245","Cannot say"],a:"13,500",sol:"Newspapers LY=25%=22,500 → Total LY=90,000. Internet LY=15%×90,000=13,500."}
+{q:"If Newspapers generated 22,500 enquiries for Somerset Kitchens last year, how many enquiries did the Internet produce that year?",opts:["7,650","8,437","13,500","15,245","Cannot say"],a:"13,500",sol:"Newspapers LY=25%=22,500 → Total LY=90,000. Internet LY=15%×90,000=13,500."},
 ]},
 {id:2,num:"Set 2",title:"Promotional Activities (£80,000)",html:PA,qs:[
 {q:"How much money was spent on promotional Stationery in the last Financial Year?",opts:["£4,900","£5,300","£6,800","£7,200","£7,400"],a:"£7,200",sol:"9%×£80,000=£7,200."},
 {q:"If 50,000 brochures were printed, what was the approximate cost per brochure?",opts:["26 pence","44 pence","53 pence","62 pence","78 pence"],a:"53 pence",sol:"Brochures=33%×80,000=£26,400. Cost per brochure=26,400/50,000=£0.528≈53p."},
 {q:"If the average cost of printing a flyer is 4 pence, how many were printed?",opts:["200,000","300,000","400,000","600,000","900,000"],a:"300,000",sol:"Flyers=15%×£80,000=£12,000. Number=£12,000/£0.04=300,000."},
 {q:"£18,800 will be spent on advertising this year. By approximately what % will this have increased from last year?",opts:["25%","31%","39%","41%","50%"],a:"31%",sol:"Last year Advertising=18%×£80,000=£14,400. Increase=(18,800-14,400)/14,400=31%."},
-{q:"If the average cost of printing a brochure is 33 pence, how many were printed last year?",opts:["60,000","70,000","80,000","90,000","100,000"],a:"80,000",sol:"Brochures=£26,400. Number=£26,400/£0.33=80,000."},
-{q:"What % of the total budget was spent on Brochures and Flyers combined?",opts:["38%","43%","48%","52%","58%"],a:"48%",sol:"Brochures 33% + Flyers 15% = 48%."}
 ]},
 {id:3,num:"Set 3",title:"Jenner Pharmaceuticals",html:JP,qs:[
 {q:"In 2003, which two items together equalled the same share as Salaries?",opts:["Profit & Training","Overheads & Advertising","Advertising & Training","Advertising & Profit","Training & Overheads"],a:"Advertising & Profit",sol:"Salaries 2003=40%. Advertising(25%)+Profit(15%)=40%."},
 {q:"Which two items accounted for larger shares of total revenue in 2003 than in 2002?",opts:["Overheads & Salaries","Profit & Training","Overheads & Training","Training & Salaries","Advertising & Salaries"],a:"Overheads & Salaries",sol:"Salaries: 34%→40% ↑. Overheads: 8.5%→10% ↑. Both increased."},
 {q:"If Overheads in 2003 were £800,000, how much was Profit that year?",opts:["£800,000","£1,000,000","£1,200,000","£1,500,000","£2,000,000"],a:"£1,200,000",sol:"10%=£800,000 → Total=£8m. Profit=15%×£8m=£1,200,000."},
-{q:"If total revenue 2002 was £5,000,000, how much was spent on Training?",opts:["£500,000","£625,000","£750,000","£800,000","£1,000,000"],a:"£625,000",sol:"12.5%×£5,000,000=£625,000."},
-{q:"In which year did Salaries and Overheads together account for a higher percentage of total revenue?",opts:["2002","2003","Both equal","Cannot say","Neither"],a:"2003",sol:"2002: 34%+8.5%=42.5%. 2003: 40%+10%=50%. 2003 is higher."}
 ]},
 {id:4,num:"Set 4",title:"Demographic & Infrastructure",html:DI,qs:[
 {q:"Approximately how many people in Argentina are NOT 'Economically Active'?",opts:["14.2m","18.7m","22.8m","28.4m","34.0m"],a:"22.8m",sol:"Not active=60.33%×37.80m=22.8m."},
 {q:"What is the GNP per person in the UK?",opts:["$18,473","$24,749","$30,480","$247,490","$1,847,300"],a:"$24,749",sol:"$1,480,000m/59.80m=$24,749."},
-{q:"What is the ratio of Trucks & Buses to Cars in Argentina?",opts:["1:5","1:6","1:7","1:8","1:9"],a:"1:7",sol:"0.80/5.60=1:7."},
 {q:"How many people live in Rural areas in the UK?",opts:["526,100","598,000","5,261,000","5,980,000","Cannot Say"],a:"5,980,000",sol:"Rural UK=10%×59,800,000=5,980,000."},
 {q:"What is the ratio of Trucks & Buses to Cars in India?",opts:["1:7","2:11","1:5","5:1","11:2"],a:"1:5",sol:"2.10/10.50=1:5."},
 {q:"How many people live in Urban areas in Argentina?",opts:["332,640","365,310","33,264,000","36,531,000","Cannot say"],a:"33,264,000",sol:"Urban Argentina=88%×37,800,000=33,264,000."},
-{q:"Which country has the highest number of Telephones per person?",opts:["Argentina","India","UK","Argentina & UK equal","Cannot say"],a:"UK",sol:"Argentina:0.28. India:0.03. UK:78.40/59.80=1.31. UK highest."}
 ]},
 {id:5,num:"Set 5",title:"Nixon Global",html:NG,qs:[
 {q:"What proportion of total Nixon Operating Profit for 2003 was generated by Asia?",opts:["1/6","2/11","1/5","2/9","1/4"],a:"2/9",sol:"Asia=1.0. Total=4.5. 1.0/4.5=2/9."},
 {q:"In 2003, approximately what % of total Revenue was generated by Asia?",opts:["45%","54%","61%","70%","Cannot Say"],a:"45%",sol:"Asia=8.0. Total=3.6+6.0+8.0=17.6. 8.0/17.6=45%."},
 {q:"By approximately what % did Revenue from Asia rise between 2000 and 2003?",opts:["16%","19%","23%","29%","34%"],a:"19%",sol:"(8.0-6.7)/6.7=1.3/6.7≈19%."},
 {q:"What proportion of total Nixon Operating Profit for 2003 was generated by the US?",opts:["1/6","2/9","1/4","1/3","2/5"],a:"1/3",sol:"US=1.5. Total=4.5. 1.5/4.5=1/3."},
-{q:"In 2000, approximately what % of total Revenue was generated by the US?",opts:["17%","21%","25%","29%","Cannot Say"],a:"17%",sol:"US=2.3. Total=2.3+4.5+6.7=13.5. 2.3/13.5≈17%."}
+{q:"In 2000, approximately what % of total Revenue was generated by the US?",opts:["17%","21%","25%","29%","Cannot Say"],a:"17%",sol:"US=2.3. Total=2.3+4.5+6.7=13.5. 2.3/13.5≈17%."},
 ]},
 {id:6,num:"Set 6",title:"Employment by Market Sector",html:EM,qs:[
 {q:"Men in Distribution fall 25%/year; women stay constant. How long before women outnumber men?",opts:["1 year","2 years","3 years","4 years","5 years"],a:"2 years",sol:"Men=2,520,000. Women=1,500,000. Yr1:1,890,000>women. Yr2:1,417,500<women → 2 years."},
@@ -197,11 +311,10 @@ const CHARTS=[
 {q:"Approximately how many MORE men than women work in Distribution?",opts:["1,000,000","1,500,000","2,000,000","2,500,000","Cannot say"],a:"1,000,000",sol:"Men=18%×14m=2,520,000. Women=25%×6m=1,500,000. Diff=1,020,000≈1,000,000."},
 {q:"Men in Distribution fall 15%/year; women constant. How long before women outnumber men?",opts:["1 year","2 years","3 years","4 years","5 years"],a:"4 years",sol:"Men=2,520,000. Women=1,500,000. Yr1:2,142,000. Yr2:1,820,700. Yr3:1,547,595. Yr4:1,315,455<1,500,000 → 4 years."},
 {q:"Which job type has the HIGHEST ratio of men to women?",opts:["Production","Finance","Distribution","Construction","Admin"],a:"Construction",sol:"Construction: Men=12%×14m=1,680,000 vs Women=1%×6m=60,000=28:1. Highest ratio."},
-{q:"Do women already outnumber men in Finance (absolute numbers)?",opts:["Yes","No","Cannot say","They are equal","Not enough data"],a:"Yes",sol:"Men Finance=13%×14m=1,820,000. Women=35%×6m=2,100,000. Women outnumber men."},
-{q:"How many people in total work in the Admin sector?",opts:["1,340,000","1,580,000","2,580,000","3,480,000","Cannot say"],a:"2,580,000",sol:"Men Admin=12%×14m=1,680,000. Women=15%×6m=900,000. Total=2,580,000."}
 ]},
 {id:7,num:"Set 7",title:"Consumer Goods Exports (HKD)",html:CG,qs:[
 {q:"What is the projected % increase in combined exports (HK + Singapore) between Y1 and Y5?",opts:["10%","20%","30%","40%","50%"],a:"50%",sol:"Y1=360, Y5=540. (540-360)/360=50%."},
+{q:"What multiple of Singapore exports are Hong Kong exports worth when calculated in $US rather than $HKD in Y1?",opts:["1","3","5","7","None of these"],a:"5",sol:"The ratio is the same in any currency: Hong Kong Y1 = 300, Singapore Y1 = 60. 300 / 60 = 5."},
 {q:"What % of projected exports from both countries in Y2 is attributable to Singapore?",opts:["15%","17.5%","20%","22.5%","25%"],a:"17.5%",sol:"Singapore Y2=70. Total=400. 70/400=17.5%."},
 {q:"Singapore's exports rise 20%/year from Y3. What is Singapore's approximate value in Y5 ($m HKD)?",opts:["$95m","$100m","$105m","$110m","$115m"],a:"$115m",sol:"Y3=80→Y4=96→Y5=115.2≈$115m."},
 {q:"What is the ratio of HK to Singapore exports in Y1?",opts:["2:1","3:1","4:1","5:1","Cannot say"],a:"5:1",sol:"300/60=5:1."},
@@ -210,7 +323,7 @@ const CHARTS=[
 {q:"What is the ratio of HK to Singapore consumer goods exports in Y5?",opts:["2:1","3:1","4:1","5:1","Cannot say"],a:"5:1",sol:"HK Y5=450. Singapore Y5=90. 450/90=5:1."},
 {q:"What is the projected value of HK exports in Y5 in $m SGD?",opts:["$25m","$50m","$75m","$100m","Cannot say"],a:"$100m",sol:"HK Y5=450m HKD. ÷4.50=100m SGD."},
 {q:"What is the projected value of Singapore exports in Y+4 in $m SGD?",opts:["$5m","$10m","$15m","$20m","Cannot say"],a:"$20m",sol:"Singapore Y5=90m HKD. ÷4.50=20m SGD."},
-{q:"Assuming constant exchange rate, combined HK+Singapore exports in Y4 in $m USD?",opts:["$40m","$50m","$60m","$70m","$80m"],a:"$70m",sol:"Y4 combined=500m HKD. ÷4.50=111.1m SGD. ÷1.60=69.4m USD≈$70m."}
+{q:"Assuming constant exchange rate, combined HK+Singapore exports in Y4 in $m USD?",opts:["$40m","$50m","$60m","$70m","$80m"],a:"$70m",sol:"Y4 combined=500m HKD. ÷4.50=111.1m SGD. ÷1.60=69.4m USD≈$70m."},
 ]},
 {id:8,num:"Set 8",title:"Elite Conservatories",html:EC,qs:[
 {q:"Approximately what was the average number of Hardwood conservatories sold per year?",opts:["330","380","430","480","Cannot say"],a:"480",sol:"200+400+500+600+700+500=2,900. 2,900/6≈480."},
@@ -219,17 +332,17 @@ const CHARTS=[
 {q:"What was the highest proportional increase in unit sales in comparison with the previous year for any conservatory?",opts:["20%","40%","60%","80%","100%"],a:"100%",sol:"UPVC 1997→1998: 400→200... wait Pine 1999→2000? No. Hardwood 1997→1998: 200→400=100% increase. Highest."},
 {q:"If Hardwood sell for twice as much as UPVC, in which year was the total VALUE of these two equal?",opts:["1997","1998","1999","2000","2001"],a:"1997",sol:"1997: Hardwood(200)×2=400=UPVC(400). Equal!"},
 {q:"On how many occasions was there a decrease in unit sales over the previous year for ALL THREE conservatory types simultaneously?",opts:["1","2","3","4","5"],a:"1",sol:"Only 2002: Pine 500→400↓, Hardwood 700→500↓, UPVC 400→300↓. All three decreased once."},
-{q:"In which year were total conservatory sales (all types) at their highest?",opts:["1997","1998","1999","2000","2001"],a:"2000",sol:"2000: 1,700. Highest of all years."}
 ]},
 {id:9,num:"Set 9",title:"Gallini Shoes",html:GS,qs:[
 {q:"What is the ratio of Ladies' to Men's shoe sales for Rest of the World?",opts:["1:2","2:1","4:1","8:1","Cannot say"],a:"4:1",sol:"Ladies=10%×4,000m=400m. Men=5%×2,000m=100m. 400:100=4:1."},
 {q:"What is the ratio of Ladies' to Men's shoe sales for France?",opts:["1:2","2:1","4:1","8:1","Cannot say"],a:"2:1",sol:"Ladies France=21%×4,000m=840m. Men=21%×2,000m=420m. 840:420=2:1."},
 {q:"What are the total sales of both types of shoes in the UK?",opts:["€1,340m","€1,560m","€1,830m","€2,100m","€2,430m"],a:"€1,340m",sol:"Ladies UK=15%×4,000=600m. Men UK=37%×2,000=740m. Total=1,340m."},
 {q:"What are the total sales of both types of shoes in Italy?",opts:["$1,800m","$2,100m","$2,600m","$3,100m","$4,200m"],a:"$1,800m",sol:"Ladies Italy=35%×4,000=1,400m. Men=20%×2,000=400m. Total=1,800m."},
+{q:"If production costs for Ladies' shoes are 1.5 times those for Men's shoes, what is the global sales margin (sales minus production costs) of Men's shoes?",opts:["€250 m","€500 m","€750 m","€1,000 m","Cannot say"],a:"Cannot say",sol:"Production costs are not given anywhere in the chart, so the margin cannot be calculated. بما إن التكاليف غير معطاة، ما نقدر نحسب — Cannot say."},
 {q:"In which region is the income from sales of Men's shoes exactly HALF that of Ladies' shoes?",opts:["Rest of World","Rest of Europe","UK","France","Cannot say"],a:"France",sol:"France: Ladies=840m, Men=420m. 420=840/2 ✓"},
 {q:"In which region is the income from sales of Ladies' shoes exactly DOUBLE that of Men's shoes?",opts:["Rest of World","Rest of Europe","UK","France","Cannot say"],a:"France",sol:"France: Ladies=840m=2×420m(Men) ✓"},
 {q:"In which region do Ladies' shoe sales fall SHORT (in €) of Men's shoe sales?",opts:["Rest of World","Rest of Europe","UK","France","Italy"],a:"UK",sol:"UK: Ladies=600m, Men=740m. Men>Ladies, so Ladies fall short by €140m."},
-{q:"By how many Euros do Ladies' shoe sales exceed Men's in the whole of Europe?",opts:["€1,500m","€1,600m","€1,700m","€1,800m","Cannot say"],a:"€1,700m",sol:"Ladies Europe=(1,400+840+600+760)=3,600m. Men=(400+420+740+340)=1,900m. Diff=1,700m."}
+{q:"By how many Euros do Ladies' shoe sales exceed Men's in the whole of Europe?",opts:["€1,500m","€1,600m","€1,700m","€1,800m","Cannot say"],a:"€1,700m",sol:"Ladies Europe=(1,400+840+600+760)=3,600m. Men=(400+420+740+340)=1,900m. Diff=1,700m."},
 ]},
 {id:10,num:"Set 10",title:"Population Breakdown by Age",html:PB,qs:[
 {q:"How many people moved from 16-39 bracket in 1970 to 40-64 bracket in 1980?",opts:["400,000","600,000","800,000","1,000,000","Cannot Say"],a:"Cannot Say",sol:"Cannot track individual movement from aggregate 10-year data."},
@@ -239,16 +352,14 @@ const CHARTS=[
 {q:"Approximately what % of the total population was of working age (16-64) in 1980?",opts:["42%","48%","56%","62%","76%"],a:"62%",sol:"(17.5+17.3)/56.0×100=34.8/56.0=62%."},
 {q:"Approximately what proportion of the total population in 1980 was under 80 years of age?",opts:["82%","86%","90%","94%","98%"],a:"98%",sol:"Under 80=(56.0-1.3)/56.0=54.7/56.0=97.7%≈98%."},
 {q:"By approximately what % did the number of people aged under 40 rise between 1970 and 2000?",opts:["4%","8%","12%","16%","Cannot Say"],a:"8%",sol:"1970:13.2+16.5=29.7. 2000:11.7+20.3=32.0. (32.0-29.7)/29.7=7.7%≈8%."},
-{q:"In 1970, approximately what % of the total population were under 40 years of age?",opts:["56%","63%","66%","70%","Cannot Say"],a:"56%",sol:"(13.2+16.5)/52.8=29.7/52.8=56.2%≈56%."}
+{q:"In 1970, approximately what % of the total population were under 40 years of age?",opts:["56%","63%","66%","70%","Cannot Say"],a:"56%",sol:"(13.2+16.5)/52.8=29.7/52.8=56.2%≈56%."},
 ]},
 {id:11,num:"Set 11",title:"Galmar Desert Oil",html:GO,qs:[
 {q:"If Amethyst's output decreased 50% in 2003, how many thousands of barrels less than 2001 would it produce daily?",opts:["200 less","100 less","Same","100 more","Cannot say"],a:"200 less",sol:"2002=240. 2003=120. 2001=240/0.75=320. Diff=120-320=-200. So 200 less than 2001."},
 {q:"For which oilfield is the ratio of Operating Costs to Exploration & Capital the highest?",opts:["Sapphire","Emerald","Topaz","Diamond","Amethyst"],a:"Emerald",sol:"E:240/6000=0.040. Highest."},
-{q:"Which oilfield has the LOWEST operating cost per barrel of daily output?",opts:["Sapphire","Emerald","Topaz","Diamond","Amethyst"],a:"Amethyst",sol:"A=120/240=0.50. Lowest."},
 {q:"If Diamond field's output is 30% crude oil, the remainder being water, how many thousands of barrels of water per day?",opts:["270","340","680","930","1,190"],a:"1,190",sol:"Total=510/0.30=1,700. Water=1,700-510=1,190."},
 {q:"Which oilfield produced the most oil in the year 2001?",opts:["Sapphire","Emerald","Topaz","Diamond","Amethyst"],a:"Topaz",sol:"2001=2002/%. S=167, E=280, T=418/1.1=380, D=340, A=320. Topaz highest."},
 {q:"Excluding Exploration costs, which oilfield was most profitable in 2002 (lowest operating cost per barrel)?",opts:["Sapphire","Emerald","Topaz","Diamond","Amethyst"],a:"Amethyst",sol:"Op.Cost/barrel: S=1.4, E=1.07, T=0.90, D=0.59, A=0.50. Amethyst lowest cost = most profitable."},
-{q:"Which field had the HIGHEST average daily output in 2001?",opts:["Sapphire","Emerald","Topaz","Diamond","Amethyst"],a:"Topaz",sol:"T=418/1.10=380. D=510/1.50=340. T is highest at 380."}
 ]},
 {id:12,num:"Set 12",title:"Burlington — Sales Rep Mileage",html:BU,qs:[
 {q:"In which week was the COMBINED mileage of Grant and Hooper the HIGHEST?",opts:["Week 1","Week 2","Week 3","Week 4","Week 5"],a:"Week 5",sol:"W1:1120, W2:824, W3:803, W4:1277, W5:1308. Week 5 is highest."},
@@ -258,7 +369,7 @@ const CHARTS=[
 {q:"If Grant's car averaged 33 miles/gallon in Week 2, approx how many gallons did he use?",opts:["15","17","19","21","23"],a:"15",sol:"502/33=15.2≈15."},
 {q:"If both drivers receive 35p per mile, how much more than Grant did Hooper receive for Week 5?",opts:["£64.30","£78.45","£91.30","£104.25","£116.90"],a:"£116.90",sol:"Hooper W5=821×0.35=£287.35. Grant=487×0.35=£170.45. Diff=£116.90."},
 {q:"If Grant receives 5p per mile LESS than Hooper, and Hooper was due £194.25 for Week 4, how much was Grant due?",opts:["£137.50","£165.40","£218.75","£240.64","Cannot say"],a:"£240.64",sol:"Hooper rate=194.25/525=£0.37/mile. Grant rate=0.37-0.05=£0.32/mile. Grant W4=752×0.32=£240.64."},
-{q:"If Grant uses 25% less fuel than Hooper, in which week was their COMBINED fuel consumption the lowest?",opts:["Week 1","Week 2","Week 3","Week 4","Week 5"],a:"Week 2",sol:"Combined=0.75×Grant+Hooper. W2=0.75×502+322=698.5. W3=0.75×307+496=726.25. Week 2 lowest."}
+{q:"If Grant uses 25% less fuel than Hooper, in which week was their COMBINED fuel consumption the lowest?",opts:["Week 1","Week 2","Week 3","Week 4","Week 5"],a:"Week 2",sol:"Combined=0.75×Grant+Hooper. W2=0.75×502+322=698.5. W3=0.75×307+496=726.25. Week 2 lowest."},
 ]},
 {id:13,num:"Set 13",title:"Jarrow Group Company Figures",html:JR,qs:[
 {q:"Which company has the SMALLEST value of Capital per Share?",opts:["Gilcrest Industries","J Barnard PLC","Felton Financial","HLB PLC","Stonemore"],a:"HLB PLC",sol:"Capital/Shares: G=84.6, J=237, F=28, H=27.1/3.2=8.46, S=18.06. HLB smallest."},
@@ -267,28 +378,24 @@ const CHARTS=[
 {q:"If someone sold 3,500 shares in HLB PLC, approximately how many shares of Felton Financial could they buy?",opts:["659","1,373","2,600","6,591","101,350"],a:"659",sol:"HLB proceeds=3,500×11.3p=39,550p. Felton price=60p. Shares=39,550/60≈659."},
 {q:"What was Stonemore's Turnover at end 2001 if 2002 showed 50% increase?",opts:["20 (£m)","30 (£m)","40 (£m)","50 (£m)","Cannot say"],a:"40 (£m)",sol:"2001=60/1.5=£40m."},
 {q:"Which company has the lowest Capital to Debt ratio?",opts:["Gilcrest Industries","J Barnard PLC","Felton Financial","HLB PLC","Stonemore"],a:"J Barnard PLC",sol:"Capital/Debt: G=4.36, J=640.1/341=1.88, F=14.8, H=3.3, S=4.22. J Barnard lowest."},
-{q:"If someone sold 3,500 shares in Gilcrest at the listed price, how many Stonemore shares could they buy?",opts:["3,200","5,500","7,750","8,000","Cannot say"],a:"7,750",sol:"Gilcrest proceeds=3,500×108p=378,000p. Stonemore=48.7p. Shares=378,000/48.7≈7,761≈7,750."}
 ]},
 {id:14,num:"Set 14",title:"International Product Sales",html:IP,qs:[
 {q:"Of the following, which had the HIGHEST sales revenue last year?",opts:["B008 in Europe","D024 in N.America","E001 in Europe","C015 in N.America","F073 in Europe"],a:"F073 in Europe",sol:"B008:26, D024:13, E001:31, C015:27, F073:36. F073 Europe highest."},
 {q:"What was the approx % increase in European revenue of D024 from last year to this?",opts:["45%","55%","76%","81%","92%"],a:"81%",sol:"(67-37)/37×100=30/37=81%."},
-{q:"Which product had a DECREASE in TOTAL (Europe+N.America) sales from last year to this?",opts:["A002","B008","C015","D024","F073"],a:"A002",sol:"A002: LY=17+410=427, TY=31+354=385. Decreased!"},
 {q:"If product E001 was sold at £44.80 per unit this year, approximately how many units were sold in North America?",opts:["826","1,250","1,272","2,656","2,509"],a:"826",sol:"N.America TY=£37,000. Units=37,000/44.80=826."},
-{q:"For product B008, what was the % increase in sales across ALL regions from last year?",opts:["139%","149%","151%","155%","161%"],a:"161%",sol:"LY=26+18=44. TY=56+59=115. (115-44)/44×100=161%."}
+{q:"For product B008, what was the % increase in sales across ALL regions from last year?",opts:["139%","149%","151%","155%","161%"],a:"161%",sol:"LY=26+18=44. TY=56+59=115. (115-44)/44×100=161%."},
 ]},
 {id:15,num:"Set 15",title:"Confederated Stores Group",html:CS,qs:[
 {q:"How many Rural Outlets have sales of £30,000 or more?",opts:["14","148","162","186","488"],a:"162",sol:"148+14=162."},
 {q:"What is the approximate ratio of Rural Outlets to Urban Outlets?",opts:["1:5","1:3","1:2","2:1","4:1"],a:"1:3",sol:"5,290/17,406≈0.3≈1:3."},
 {q:"How many Outlets in TOTAL have sales of less than £15,000?",opts:["2,224","5,512","6,220","6,484","7,736"],a:"7,736",sol:"256+58+1532+378+4260+1252=7,736."},
 {q:"What is the total value of sales for Rural Outlets in the under £5,000 bracket if the average value of sales per shop is £4,300?",opts:["£218,300","£249,400","£272,600","£294,200","£296,400"],a:"£249,400",sol:"58×£4,300=£249,400."},
-{q:"What proportion of all CSG outlets are Rural?",opts:["23%","27%","30%","33%","Cannot say"],a:"23%",sol:"5,290/(17,406+5,290)=5,290/22,696=23%."}
 ]},
 {id:16,num:"Set 16",title:"Tresco Group Bars",html:TR,qs:[
 {q:"How many Bars command weekly sales of between £40,000 and £59,999?",opts:["961","1,296","2,316","2,611","3,338"],a:"3,338",sol:"(315+961)+(412+1,650)=1,276+2,062=3,338."},
 {q:"How many more Bars WITH Restaurants than WITHOUT are in the £60,000–£69,999 bracket?",opts:["1,474","1,794","2,036","2,918","Cannot say"],a:"1,794",sol:"2,356-562=1,794."},
 {q:"How many more Bars WITH Restaurants than WITHOUT are in the £70,000–£79,999 bracket?",opts:["2,200","2,680","2,940","3,460","3,720"],a:"2,680",sol:"3,150-470=2,680."},
 {q:"How many Bars WITHOUT Restaurants command weekly sales of more than £80,000?",opts:["79","220","281","295","299"],a:"299",sol:"220+75+4=299."},
-{q:"How many Bars WITH Restaurants command weekly sales of more than £70,000?",opts:["3,150","6,225","7,583","7,625","7,904"],a:"7,625",sol:"3,150+2,754+1,679+42=7,625."}
 ]},
 {id:17,num:"Set 17",title:"Starlight Cosmetics",html:SC,qs:[
 {q:"What was the approx Pre-Tax profit as % of Turnover in year 2000?",opts:["12%","17%","22%","27%","Cannot say"],a:"17%",sol:"Turnover=994,800×1.3=1,293,240. Profit%=218,900/1,293,240=17%."},
@@ -298,41 +405,198 @@ const CHARTS=[
 {q:"By approximately what % did Starlight Cosmetics' Turnover increase between 1999 and 2001?",opts:["25%","37%","49%","63%","75%"],a:"49%",sol:"T1999=884,300×1.2=1,061,160. T2001=1,126,000×1.4=1,576,400. (1,576,400-1,061,160)/1,061,160=49%."},
 {q:"By approximately what % did Starlight Cosmetics' Turnover increase between 1998 and 2002?",opts:["10%","25%","33%","48%","62%"],a:"48%",sol:"T1998=789,600×1.4=1,105,440. T2002=1,261,200×1.3=1,639,560. (1,639,560-1,105,440)/1,105,440=48%."},
 {q:"What was the approximate Turnover of Starlight Cosmetics in the year 2001?",opts:["£602,200","£804,300","£1,100,000","£1,316,000","£1,576,000"],a:"£1,576,000",sol:"T2001=1,126,000×1.4=£1,576,400≈£1,576,000."},
-{q:"If the 1998 Pre-Tax profit showed a 50% increase over 1997, what was the 1997 Pre-Tax profit?",opts:["£98,440","£105,280","£120,480","£175,950","£236,880"],a:"£105,280",sol:"1997=157,920/1.5=£105,280."}
+{q:"If the 1998 Pre-Tax profit showed a 50% increase over 1997, what was the 1997 Pre-Tax profit?",opts:["£98,440","£105,280","£120,480","£175,950","£236,880"],a:"£105,280",sol:"1997=157,920/1.5=£105,280."},
 ]},
 {id:18,num:"Set 18",title:"Customer Satisfaction Survey",html:SS,qs:[
 {q:"How many Good ratings did the South and the West receive between them?",opts:["1,670","1,980","2,110","2,170","2,280"],a:"2,170",sol:"South Good=1,360. West Good=810. Total=2,170."},
 {q:"Which Region received the highest number of Poor ratings?",opts:["North","South","East","West","Central"],a:"South",sol:"South has 120 Poor ratings. Highest."},
 {q:"Which Region has the LOWEST percentage of Poor ratings relative to its total?",opts:["North","South","East","West","Central"],a:"West",sol:"West: 30/(30+160+810)=30/1000=3%. Lowest."},
 {q:"What proportion of the ratings received by the Eastern Region are Acceptable?",opts:["10%","20%","30%","40%","50%"],a:"30%",sol:"East Acceptable=300. East Total=1,000. 300/1000=30%."},
-{q:"Which Region has the highest percentage of Good ratings relative to its total?",opts:["North","South","East","West","Central"],a:"West",sol:"N=69%, S=68%, E=64%, W=810/1000=81%, C=65.3%. West highest."}
 ]},
 {id:19,num:"Set 19",title:"Company Financial Year Figures",html:CF,qs:[
 {q:"What percentage of IKO Inc's Turnover is Profit?",opts:["24.3%","36.2%","41.1%","44.3%","Cannot say"],a:"41.1%",sol:"Profit/Turnover=3.0/7.3=0.411=41.1%."},
 {q:"If someone were to sell 3,500 shares in Hardlow plc, how many shares of Aurore could they buy with the proceeds?",opts:["2,217","5,260","7,761","15,782","35,000"],a:"7,761",sol:"Hardlow proceeds=3,500×108p=378,000p. Aurore price=48.7p. Shares=378,000/48.7≈7,761."},
-{q:"If IKO Inc's Turnover is down 7% from the last financial year, what was the Turnover for that year?",opts:["£7.5m","£7.85m","£8.15m","£8.35m","Cannot say"],a:"£7.85m",sol:"Current Turnover=7.3m. Previous=7.3/0.93=£7.849m≈£7.85m."}
-]}
+{q:"If IKO Inc's Turnover is down 7% from the last financial year, what was the Turnover for that year?",opts:["£7.5m","£7.85m","£8.15m","£8.35m","Cannot say"],a:"£7.85m",sol:"Current Turnover=7.3m. Previous=7.3/0.93=£7.849m≈£7.85m."},
+]},
 ];
 
-const ALL_Q=[];
-CHARTS.forEach(c=>{c.qs.forEach(q=>{ALL_Q.push({...q,cid:c.id})})});
-let mode='all',selCid=null,queue=[],cur=0,correct=0,wrong=0,answered=false;
-const tg=document.getElementById('topic-grid');
-CHARTS.forEach(c=>{const b=document.createElement('button');b.className='t-btn';b.textContent=c.num+' · '+c.title;b.dataset.cid=c.id;b.onclick=()=>{selCid=c.id;document.querySelectorAll('.t-btn').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');};tg.appendChild(b);});
-function setMode(m,el){mode=m;document.querySelectorAll('.mode-item').forEach(x=>x.classList.remove('active'));el.classList.add('active');document.getElementById('topic-picker').style.display=m==='topic'?'block':'none';if(m!=='topic')selCid=null;}
-function shuffle(a){return a.slice().sort(()=>Math.random()-.5)}
-function startQuiz(){let pool;if(mode==='topic'&&selCid){const c=CHARTS.find(x=>x.id===selCid);pool=c?c.qs.map(q=>({...q,cid:c.id})):[];}else if(mode==='random'){pool=shuffle(ALL_Q).slice(0,20);}else{pool=shuffle(ALL_Q);}if(!pool.length)return;queue=pool;cur=0;correct=0;wrong=0;document.getElementById('home').style.display='none';document.getElementById('quiz').style.display='block';document.getElementById('result').style.display='none';renderQ();}
-function renderQ(){answered=false;const item=queue[cur];const c=CHARTS.find(x=>x.id===item.cid);document.getElementById('p-num').textContent=c.num;document.getElementById('p-title').textContent=c.title;document.getElementById('p-body').innerHTML=c.html;document.getElementById('q-counter').textContent=(cur+1)+'/'+queue.length;document.getElementById('q-prog').style.width=Math.round(cur/queue.length*100)+'%';document.getElementById('sc-c').textContent=correct;document.getElementById('sc-w').textContent=wrong;document.getElementById('q-topic-tag').textContent=c.title;document.getElementById('q-text').textContent=item.q;document.getElementById('q-feedback').style.display='none';document.getElementById('next-btn').style.display='none';const btns=document.getElementById('q-btns');btns.innerHTML='';item.opts.forEach(opt=>{const b=document.createElement('button');b.className='ans-btn';b.textContent=opt;b.onclick=()=>answer(opt,b,item.a,item.sol);btns.appendChild(b);});}
-function answer(chosen,btn,ca,sol){if(answered)return;answered=true;const ok=chosen===ca;if(ok)correct++;else wrong++;btn.classList.add(ok?'correct':'wrong');document.querySelectorAll('.ans-btn').forEach(b=>{b.disabled=true;if(b.textContent===ca&&!ok)b.classList.add('reveal');});const fb=document.getElementById('q-feedback');fb.className='feedback-box '+(ok?'fb-correct':'fb-wrong');fb.innerHTML=(ok?'✓ Correct!':'✗ Correct: <strong>'+ca+'</strong>')+'<div class="feedback-solution">💡 '+sol+'</div>';fb.style.display='block';document.getElementById('next-btn').style.display='block';}
-function nextQ(){cur++;if(cur>=queue.length){showResult();return;}renderQ();}
-function showResult(){document.getElementById('quiz').style.display='none';document.getElementById('result').style.display='flex';const total=queue.length,pct=Math.round(correct/total*100);document.getElementById('r-pct').textContent=pct+'%';document.getElementById('r-label').textContent=correct+' out of '+total+' correct';document.getElementById('r-c').textContent=correct;document.getElementById('r-w').textContent=wrong;const msgs=['Excellent! Outstanding — fully exam ready.','Great work! Keep it up.','Good, some topics need more review.','Keep practicing — you\'re building the skills!'];document.getElementById('r-msg').textContent=msgs[pct>=90?0:pct>=70?1:pct>=50?2:3];}
-function restartSame(){queue=shuffle(queue);cur=0;correct=0;wrong=0;document.getElementById('result').style.display='none';document.getElementById('quiz').style.display='block';renderQ();}
-function goHome(){document.getElementById('quiz').style.display='none';document.getElementById('result').style.display='none';document.getElementById('home').style.display='flex';}
-document.getElementById('home').style.display='flex';
+let mode='all', selTopic=-1, queue=[], idx=0;
+let answers=[]; // {chosen, correct} per question, null if unanswered
+
+function setMode(m, el){
+  mode=m;
+  document.querySelectorAll('.mode-item').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('topic-picker').style.display=m==='topic'?'block':'none';
+}
+
+(function buildTopicGrid(){
+  const g=document.getElementById('topic-grid');
+  CHARTS.forEach((c,i)=>{
+    const b=document.createElement('button');
+    b.className='t-btn';
+    b.textContent=c.num+': '+c.title;
+    b.onclick=()=>{selTopic=i;document.querySelectorAll('.t-btn').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');};
+    g.appendChild(b);
+  });
+})();
+
+function startQuiz(){
+  if(mode==='all'){
+    queue=[];
+    CHARTS.forEach(c=>{
+      c.qs.forEach((q,qi)=>queue.push({...q,setTitle:c.title,setNum:c.num,setHtml:c.html,posInSet:qi+1,setSize:c.qs.length}));
+    });
+  } else if(mode==='topic'){
+    if(selTopic<0){alert('Please select a chart set.');return;}
+    const c=CHARTS[selTopic];
+    queue=c.qs.map((q,qi)=>({...q,setTitle:c.title,setNum:c.num,setHtml:c.html,posInSet:qi+1,setSize:c.qs.length}));
+  } else {
+    const all=[];
+    CHARTS.forEach(c=>{
+      c.qs.forEach((q,qi)=>all.push({...q,setTitle:c.title,setNum:c.num,setHtml:c.html,posInSet:qi+1,setSize:c.qs.length}));
+    });
+    queue=[...all].sort(()=>Math.random()-.5).slice(0,20);
+  }
+  idx=0; answers=new Array(queue.length).fill(null);
+  document.getElementById('home').style.display='none';
+  document.getElementById('result').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  render();
+}
+
+function render(){
+  const q=queue[idx];
+  document.getElementById('chart-col').innerHTML=q.setHtml;
+  document.getElementById('q-num').textContent='Question '+q.posInSet+' of '+q.setSize;
+  document.getElementById('q-text').textContent=q.q;
+  
+  const opts=document.getElementById('opts');
+  opts.innerHTML='';
+  const state=answers[idx];
+  
+  q.opts.forEach(opt=>{
+    const row=document.createElement('div');
+    row.className='opt-row';
+    const r=document.createElement('div');
+    r.className='pdf-radio';
+    const oval=document.createElement('div');
+    oval.className='oval';
+    r.appendChild(oval);
+    const lbl=document.createElement('span');
+    lbl.className='opt-label';
+    lbl.textContent=opt;
+    row.appendChild(r);
+    row.appendChild(lbl);
+    
+    if(state){
+      row.classList.add('locked');
+      if(opt===state.chosen){
+        oval.style.background='radial-gradient(circle at 50% 50%, #2a2a2a 0 42%, #fff 50%)';
+        row.classList.add(state.chosen===q.a?'chosen-correct':'chosen-wrong');
+      }
+      if(opt===q.a) row.classList.add('correct-box');
+    } else {
+      row.onclick=()=>answer(opt,q,oval,row);
+    }
+    opts.appendChild(row);
+  });
+  
+  // Solution area
+  const sw=document.getElementById('solution-wrap');
+  if(state){
+    showSolution(q, state.chosen===q.a);
+  } else {
+    sw.style.display='none';
+  }
+  
+  // Nav
+  document.getElementById('back-btn').disabled=(idx===0);
+  document.getElementById('next-btn').textContent = idx===queue.length-1 ? 'Finish ✓' : 'Next →';
+  updateScore();
+  window.scrollTo(0,0);
+}
+
+function answer(chosen, q, oval, row){
+  answers[idx]={chosen, correct: chosen===q.a};
+  oval.style.background='radial-gradient(circle at 50% 50%, #2a2a2a 0 42%, #fff 50%)';
+  document.querySelectorAll('.opt-row').forEach(r=>{
+    r.classList.add('locked');
+    r.onclick=null;
+    const lblEl=r.querySelector('.opt-label');
+    if(lblEl.textContent===q.a) r.classList.add('correct-box');
+  });
+  row.classList.add(chosen===q.a?'chosen-correct':'chosen-wrong');
+  showSolution(q, chosen===q.a);
+  updateScore();
+}
+
+function showSolution(q, isCorrect){
+  const sw=document.getElementById('solution-wrap');
+  const fb=document.getElementById('fb-line');
+  fb.textContent=isCorrect?'✓ Correct':'✗ Incorrect — correct answer outlined in red';
+  fb.className='fb-line '+(isCorrect?'ok':'no');
+  const sl=document.getElementById('sol-lines');
+  sl.innerHTML='';
+  // Split solution into highlighted lines like the PDF (yellow highlighter)
+  const parts=q.sol.split(/(?<=\.)\s+/).filter(p=>p.trim());
+  if(parts.length===0) parts.push(q.sol);
+  parts.forEach(p=>{
+    const d=document.createElement('div');
+    const span=document.createElement('span');
+    span.className='sol-line';
+    span.textContent=p.trim();
+    d.appendChild(span);
+    sl.appendChild(d);
+  });
+  sw.style.display='block';
+}
+
+function updateScore(){
+  const answered=answers.filter(a=>a!==null).length;
+  const correct=answers.filter(a=>a&&a.correct).length;
+  document.getElementById('nav-score').innerHTML='Q '+(idx+1)+' / '+queue.length+' &nbsp;·&nbsp; Score: <b>'+correct+'</b> / '+answered;
+}
+
+function nextQuestion(){
+  if(idx>=queue.length-1){ showResult(); return; }
+  idx++;
+  render();
+}
+function prevQuestion(){
+  if(idx<=0) return;
+  idx--;
+  render();
+}
+
+function showResult(){
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('result').style.display='flex';
+  const total=queue.length;
+  const correct=answers.filter(a=>a&&a.correct).length;
+  const answered=answers.filter(a=>a!==null).length;
+  const wrong=answered-correct;
+  const pct=answered>0?Math.round(correct/answered*100):0;
+  document.getElementById('result-pct').textContent=pct+'%';
+  document.getElementById('r-correct').textContent=correct;
+  document.getElementById('r-wrong').textContent=wrong;
+  document.getElementById('r-total').textContent=answered+' / '+total;
+  let msg='';
+  if(pct>=80) msg='ممتاز! أداء قوي جداً في الاستدلال العددي. استمر!';
+  else if(pct>=60) msg='جيد. راجع الأسئلة التي أخطأت فيها وركّز على طريقة الحل الموضحة.';
+  else msg='تحتاج مزيداً من التدريب. ادرس الحلول بعناية وتدرّب على كل نوع من الرسوم البيانية.';
+  document.getElementById('result-msg').textContent=msg;
+}
+
+function restartQuiz(){
+  document.getElementById('result').style.display='none';
+  startQuiz();
+}
+function goHome(){
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('result').style.display='none';
+  document.getElementById('home').style.display='flex';
+}
 </script>
-<div style="position:fixed;bottom:0;left:0;right:0;text-align:center;padding:10px;font-size:12px;color:#555;background:var(--bg);border-top:1px solid var(--border);font-family:&#39;IBM Plex Sans Arabic&#39;,sans-serif;z-index:999">
-  © <strong style="color:#888">KRM</strong> — لا تنسوني من الدعاء 🤍
-</div>
-
-
-</body></html>
+</body>
+</html>
